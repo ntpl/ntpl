@@ -20,11 +20,11 @@ class lammps:
 		self.file_name = file_name
 	#-- END __init__ --#
 
-	def buildlammps(self, blocks):
+	def buildLammps(self, blocks):
 		"""
 		This creates and writes the lammps file based on the blocks provided
 
-		lattice.lammps.buildlammps(blocks)
+		lattice.lammps.buildLammps(blocks)
 		Parameters
 		----------
 			blocks : list of type block
@@ -137,11 +137,11 @@ class xyz:
 		self.file_name = file_name
 	#-- END __init__ --#
 
-	def buildxyz(self, blocks):
+	def buildXyz(self, blocks):
 		"""
 		This creates and writes the xyz file based on the blocks provided
 
-		lattice.xyz.buildxyz(blocks)
+		lattice.xyz.buildXyz(blocks)
 		Parameters
 		----------
 			blocks : list of type block
@@ -271,11 +271,11 @@ class block:
 	#-- END __init__ --#
 #-- END block --#
 
-def print_basis(lat_type):
+def printBasis(lat_type):
 	"""
 	Prints the basis vectors defined in this module for reference
 
-	lattice.print_basis(lat_type)
+	lattice.printBasis(lat_type)
 	Parameters
 	----------
 		lat_type : str
