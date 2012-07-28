@@ -6,11 +6,11 @@
 from sys import exit
 
 ## ## ## lammps class
-class lammps:
+class Lammps:
 	"""
 	Creates an object that represents a single lammps file.
 
-	lattice.lammps(file_name)
+	lattice.Lammps(file_name)
 	Parameters
 	----------
 		file_name : str
@@ -24,10 +24,10 @@ class lammps:
 		"""
 		This creates and writes the lammps file based on the blocks provided
 
-		lattice.lammps.buildLammps(blocks)
+		lattice.Lammps.buildLammps(blocks)
 		Parameters
 		----------
-			blocks : list of type block
+			blocks : list of type Block
 				The blocks used to build the lammps file. Blocks
 				should be put in order of origin to z-direction
 				max.
@@ -119,15 +119,15 @@ class lammps:
 			origin, atom_num = _outPos(blocks[i].lat_vector, blocks[i].basis, blocks[i].atom_mass, blocks[i].dim, blocks[i].bd_space, origin, masses, atom_num) #returns new origin
 
 		print('Lammps file complete: Atoms '+ str(total_atom_num)+ '; Box size ['+ str(x_max)+ ', '+ str(y_max)+ ', '+ str(z_max)+ ']\n')
-	#-- END buildlammps --#
-#-- END lammps --#
+	#-- END buildLammps --#
+#-- END Lammps --#
 
 ## ## ## xyz class
-class xyz:
+class Xyz:
 	"""
 	Creates an object that represents a single xyz file.
 
-	lattice.xyz(file_name)
+	lattice.Xyz(file_name)
 	Parameters
 	----------
 		file_name : str
@@ -141,7 +141,7 @@ class xyz:
 		"""
 		This creates and writes the xyz file based on the blocks provided
 
-		lattice.xyz.buildXyz(blocks)
+		lattice.Xyz.buildXyz(blocks)
 		Parameters
 		----------
 			blocks : list of type block
@@ -204,16 +204,16 @@ class xyz:
 			origin = _outPos(blocks[i].lat_vector, blocks[i].basis, blocks[i].dim, blocks[i].atom_type, blocks[i].bd_space, origin) #returns new origin
 
 		print('XYZ file complete: Atoms '+ str(total_atom_num)+ '\n')
-	#-- END buildxyz --#
-#-- END xyz --#
+	#-- END buildXyz --#
+#-- END Xyz --#
 
 
-## ## ## block class 
-class block:
+## ## ## Block class 
+class Block:
 	"""
 	Defines a singular lattice that can linearly interfaced with other lattices
 
-	lattice.block(lat_vector, lat_type, dim, bd_space=0, atom_mass=None, atom_type=None)
+	lattice.Block(lat_vector, lat_type, dim, bd_space=0, atom_mass=None, atom_type=None)
 	Parameters
 	----------
 		lat_vector : list of type float
@@ -269,7 +269,7 @@ class block:
 			exit("ERROR: Only types \'sc\', \'fcc\', \'bcc\', \'diamond\' are supported")
 
 	#-- END __init__ --#
-#-- END block --#
+#-- END Block --#
 
 def printBasis(lat_type):
 	"""
