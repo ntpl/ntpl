@@ -1,0 +1,633 @@
+
+ntpl.bw01.me.cmu.local: Torque Server @ ntpl.bw01.me.cmu.local
+                                                                         Req'd  Req'd   Elap
+Job ID               Username Queue    Jobname          SessID NDS   TSK Memory Time  S Time
+-------------------- -------- -------- ---------------- ------ ----- --- ------ ----- - -----
+7551.ntpl.bw01.m     jason    default  sam_stand_300K_1  23764     1  --    --    --  R 27:12
+   n014/5+n014/4+n014/3+n014/2
+7839.ntpl.bw01.m     kevin    default  GK.LJ.6.1.8         --      1  --    --    --  Q   -- 
+    -- 
+7842.ntpl.bw01.m     kevin    default  GK.LJ.9.1.8         --      1  --    --    --  Q   -- 
+    -- 
+7843.ntpl.bw01.m     kevin    default  GK.LJ.10.1.8        --      1  --    --    --  Q   -- 
+    -- 
+7844.ntpl.bw01.m     kevin    default  GK.LJ.1.2.8         --      1  --    --    --  Q   -- 
+    -- 
+7845.ntpl.bw01.m     kevin    default  GK.LJ.2.2.8         --      1  --    --    --  Q   -- 
+    -- 
+7846.ntpl.bw01.m     kevin    default  GK.LJ.3.2.8         --      1  --    --    --  Q   -- 
+    -- 
+7847.ntpl.bw01.m     kevin    default  GK.LJ.4.2.8         --      1  --    --    --  Q   -- 
+    -- 
+7848.ntpl.bw01.m     kevin    default  GK.LJ.5.2.8         --      1  --    --    --  Q   -- 
+    -- 
+7849.ntpl.bw01.m     kevin    default  GK.LJ.6.2.8         --      1  --    --    --  Q   -- 
+    -- 
+7850.ntpl.bw01.m     kevin    default  GK.LJ.7.2.8         --      1  --    --    --  Q   -- 
+    -- 
+7851.ntpl.bw01.m     kevin    default  GK.LJ.8.2.8         --      1  --    --    --  Q   -- 
+    -- 
+7852.ntpl.bw01.m     kevin    default  GK.LJ.9.2.8         --      1  --    --    --  Q   -- 
+    -- 
+7853.ntpl.bw01.m     kevin    default  GK.LJ.10.2.8        --      1  --    --    --  Q   -- 
+    -- 
+7854.ntpl.bw01.m     kevin    default  GK.LJ.1.3.8         --      1  --    --    --  Q   -- 
+    -- 
+7855.ntpl.bw01.m     kevin    default  GK.LJ.2.3.8         --      1  --    --    --  Q   -- 
+    -- 
+7856.ntpl.bw01.m     kevin    default  GK.LJ.3.3.8         --      1  --    --    --  Q   -- 
+    -- 
+7857.ntpl.bw01.m     kevin    default  GK.LJ.4.3.8         --      1  --    --    --  Q   -- 
+    -- 
+7858.ntpl.bw01.m     kevin    default  GK.LJ.5.3.8         --      1  --    --    --  Q   -- 
+    -- 
+7859.ntpl.bw01.m     kevin    default  GK.LJ.6.3.8         --      1  --    --    --  Q   -- 
+    -- 
+7860.ntpl.bw01.m     kevin    default  GK.LJ.7.3.8         --      1  --    --    --  Q   -- 
+    -- 
+7861.ntpl.bw01.m     kevin    default  GK.LJ.8.3.8         --      1  --    --    --  Q   -- 
+    -- 
+7862.ntpl.bw01.m     kevin    default  GK.LJ.9.3.8         --      1  --    --    --  Q   -- 
+    -- 
+7863.ntpl.bw01.m     kevin    default  GK.LJ.10.3.8        --      1  --    --    --  Q   -- 
+    -- 
+7864.ntpl.bw01.m     kevin    default  GK.LJ.1.4.8         --      1  --    --    --  Q   -- 
+    -- 
+7865.ntpl.bw01.m     kevin    default  GK.LJ.2.4.8         --      1  --    --    --  Q   -- 
+    -- 
+7866.ntpl.bw01.m     kevin    default  GK.LJ.3.4.8         --      1  --    --    --  Q   -- 
+    -- 
+7867.ntpl.bw01.m     kevin    default  GK.LJ.4.4.8         --      1  --    --    --  Q   -- 
+    -- 
+7868.ntpl.bw01.m     kevin    default  GK.LJ.5.4.8         --      1  --    --    --  Q   -- 
+    -- 
+7869.ntpl.bw01.m     kevin    default  GK.LJ.6.4.8         --      1  --    --    --  Q   -- 
+    -- 
+7870.ntpl.bw01.m     kevin    default  GK.LJ.7.4.8         --      1  --    --    --  Q   -- 
+    -- 
+7871.ntpl.bw01.m     kevin    default  GK.LJ.8.4.8         --      1  --    --    --  Q   -- 
+    -- 
+7872.ntpl.bw01.m     kevin    default  GK.LJ.9.4.8         --      1  --    --    --  Q   -- 
+    -- 
+7873.ntpl.bw01.m     kevin    default  GK.LJ.10.4.8        --      1  --    --    --  Q   -- 
+    -- 
+7874.ntpl.bw01.m     kevin    default  GK.LJ.1.1.9         --      1  --    --    --  Q   -- 
+    -- 
+7875.ntpl.bw01.m     kevin    default  GK.LJ.2.1.9         --      1  --    --    --  Q   -- 
+    -- 
+7876.ntpl.bw01.m     kevin    default  GK.LJ.3.1.9         --      1  --    --    --  Q   -- 
+    -- 
+7877.ntpl.bw01.m     kevin    default  GK.LJ.4.1.9         --      1  --    --    --  Q   -- 
+    -- 
+7878.ntpl.bw01.m     kevin    default  GK.LJ.5.1.9         --      1  --    --    --  Q   -- 
+    -- 
+7879.ntpl.bw01.m     kevin    default  GK.LJ.6.1.9         --      1  --    --    --  Q   -- 
+    -- 
+7880.ntpl.bw01.m     kevin    default  GK.LJ.7.1.9         --      1  --    --    --  Q   -- 
+    -- 
+7881.ntpl.bw01.m     kevin    default  GK.LJ.8.1.9         --      1  --    --    --  Q   -- 
+    -- 
+7882.ntpl.bw01.m     kevin    default  GK.LJ.9.1.9         --      1  --    --    --  Q   -- 
+    -- 
+7883.ntpl.bw01.m     kevin    default  GK.LJ.10.1.9        --      1  --    --    --  Q   -- 
+    -- 
+7884.ntpl.bw01.m     kevin    default  GK.LJ.1.2.9         --      1  --    --    --  Q   -- 
+    -- 
+7885.ntpl.bw01.m     kevin    default  GK.LJ.2.2.9         --      1  --    --    --  Q   -- 
+    -- 
+7886.ntpl.bw01.m     kevin    default  GK.LJ.3.2.9         --      1  --    --    --  Q   -- 
+    -- 
+7887.ntpl.bw01.m     kevin    default  GK.LJ.4.2.9         --      1  --    --    --  Q   -- 
+    -- 
+7888.ntpl.bw01.m     kevin    default  GK.LJ.5.2.9         --      1  --    --    --  Q   -- 
+    -- 
+7889.ntpl.bw01.m     kevin    default  GK.LJ.6.2.9         --      1  --    --    --  Q   -- 
+    -- 
+7890.ntpl.bw01.m     kevin    default  GK.LJ.7.2.9         --      1  --    --    --  Q   -- 
+    -- 
+7891.ntpl.bw01.m     kevin    default  GK.LJ.8.2.9         --      1  --    --    --  Q   -- 
+    -- 
+7892.ntpl.bw01.m     kevin    default  GK.LJ.9.2.9         --      1  --    --    --  Q   -- 
+    -- 
+7893.ntpl.bw01.m     kevin    default  GK.LJ.10.2.9        --      1  --    --    --  Q   -- 
+    -- 
+7894.ntpl.bw01.m     kevin    default  GK.LJ.1.3.9         --      1  --    --    --  Q   -- 
+    -- 
+7895.ntpl.bw01.m     kevin    default  GK.LJ.2.3.9         --      1  --    --    --  Q   -- 
+    -- 
+7896.ntpl.bw01.m     kevin    default  GK.LJ.3.3.9         --      1  --    --    --  Q   -- 
+    -- 
+7897.ntpl.bw01.m     kevin    default  GK.LJ.4.3.9         --      1  --    --    --  Q   -- 
+    -- 
+7898.ntpl.bw01.m     kevin    default  GK.LJ.5.3.9         --      1  --    --    --  Q   -- 
+    -- 
+7899.ntpl.bw01.m     kevin    default  GK.LJ.6.3.9         --      1  --    --    --  Q   -- 
+    -- 
+7900.ntpl.bw01.m     kevin    default  GK.LJ.7.3.9         --      1  --    --    --  Q   -- 
+    -- 
+7901.ntpl.bw01.m     kevin    default  GK.LJ.8.3.9         --      1  --    --    --  Q   -- 
+    -- 
+7902.ntpl.bw01.m     kevin    default  GK.LJ.9.3.9         --      1  --    --    --  Q   -- 
+    -- 
+7903.ntpl.bw01.m     kevin    default  GK.LJ.10.3.9        --      1  --    --    --  Q   -- 
+    -- 
+7904.ntpl.bw01.m     kevin    default  GK.LJ.1.4.9         --      1  --    --    --  Q   -- 
+    -- 
+7905.ntpl.bw01.m     kevin    default  GK.LJ.2.4.9         --      1  --    --    --  Q   -- 
+    -- 
+7906.ntpl.bw01.m     kevin    default  GK.LJ.3.4.9         --      1  --    --    --  Q   -- 
+    -- 
+7907.ntpl.bw01.m     kevin    default  GK.LJ.4.4.9         --      1  --    --    --  Q   -- 
+    -- 
+7908.ntpl.bw01.m     kevin    default  GK.LJ.5.4.9         --      1  --    --    --  Q   -- 
+    -- 
+7909.ntpl.bw01.m     kevin    default  GK.LJ.6.4.9         --      1  --    --    --  Q   -- 
+    -- 
+7910.ntpl.bw01.m     kevin    default  GK.LJ.7.4.9         --      1  --    --    --  Q   -- 
+    -- 
+7911.ntpl.bw01.m     kevin    default  GK.LJ.8.4.9         --      1  --    --    --  Q   -- 
+    -- 
+7912.ntpl.bw01.m     kevin    default  GK.LJ.9.4.9         --      1  --    --    --  Q   -- 
+    -- 
+7913.ntpl.bw01.m     kevin    default  GK.LJ.10.4.9        --      1  --    --    --  Q   -- 
+    -- 
+7914.ntpl.bw01.m     kevin    default  GK.LJ.1.1.10        --      1  --    --    --  Q   -- 
+    -- 
+7915.ntpl.bw01.m     kevin    default  GK.LJ.2.1.10        --      1  --    --    --  Q   -- 
+    -- 
+7916.ntpl.bw01.m     kevin    default  GK.LJ.3.1.10        --      1  --    --    --  Q   -- 
+    -- 
+7917.ntpl.bw01.m     kevin    default  GK.LJ.4.1.10        --      1  --    --    --  Q   -- 
+    -- 
+7918.ntpl.bw01.m     kevin    default  GK.LJ.5.1.10        --      1  --    --    --  Q   -- 
+    -- 
+7919.ntpl.bw01.m     kevin    default  GK.LJ.6.1.10        --      1  --    --    --  Q   -- 
+    -- 
+7920.ntpl.bw01.m     kevin    default  GK.LJ.7.1.10        --      1  --    --    --  Q   -- 
+    -- 
+7921.ntpl.bw01.m     kevin    default  GK.LJ.8.1.10        --      1  --    --    --  Q   -- 
+    -- 
+7922.ntpl.bw01.m     kevin    default  GK.LJ.9.1.10        --      1  --    --    --  Q   -- 
+    -- 
+7923.ntpl.bw01.m     kevin    default  GK.LJ.10.1.10       --      1  --    --    --  Q   -- 
+    -- 
+7924.ntpl.bw01.m     kevin    default  GK.LJ.1.2.10        --      1  --    --    --  Q   -- 
+    -- 
+7925.ntpl.bw01.m     kevin    default  GK.LJ.2.2.10        --      1  --    --    --  Q   -- 
+    -- 
+7926.ntpl.bw01.m     kevin    default  GK.LJ.3.2.10        --      1  --    --    --  Q   -- 
+    -- 
+7927.ntpl.bw01.m     kevin    default  GK.LJ.4.2.10        --      1  --    --    --  Q   -- 
+    -- 
+7928.ntpl.bw01.m     kevin    default  GK.LJ.5.2.10        --      1  --    --    --  Q   -- 
+    -- 
+7929.ntpl.bw01.m     kevin    default  GK.LJ.6.2.10        --      1  --    --    --  Q   -- 
+    -- 
+7930.ntpl.bw01.m     kevin    default  GK.LJ.7.2.10        --      1  --    --    --  Q   -- 
+    -- 
+7931.ntpl.bw01.m     kevin    default  GK.LJ.8.2.10        --      1  --    --    --  Q   -- 
+    -- 
+7932.ntpl.bw01.m     kevin    default  GK.LJ.9.2.10        --      1  --    --    --  Q   -- 
+    -- 
+7933.ntpl.bw01.m     kevin    default  GK.LJ.10.2.10       --      1  --    --    --  Q   -- 
+    -- 
+7934.ntpl.bw01.m     kevin    default  GK.LJ.1.3.10        --      1  --    --    --  Q   -- 
+    -- 
+7935.ntpl.bw01.m     kevin    default  GK.LJ.2.3.10        --      1  --    --    --  Q   -- 
+    -- 
+7936.ntpl.bw01.m     kevin    default  GK.LJ.3.3.10        --      1  --    --    --  Q   -- 
+    -- 
+7937.ntpl.bw01.m     kevin    default  GK.LJ.4.3.10        --      1  --    --    --  Q   -- 
+    -- 
+7938.ntpl.bw01.m     kevin    default  GK.LJ.5.3.10        --      1  --    --    --  Q   -- 
+    -- 
+7939.ntpl.bw01.m     kevin    default  GK.LJ.6.3.10        --      1  --    --    --  Q   -- 
+    -- 
+7940.ntpl.bw01.m     kevin    default  GK.LJ.7.3.10        --      1  --    --    --  Q   -- 
+    -- 
+7941.ntpl.bw01.m     kevin    default  GK.LJ.8.3.10        --      1  --    --    --  Q   -- 
+    -- 
+7942.ntpl.bw01.m     kevin    default  GK.LJ.9.3.10        --      1  --    --    --  Q   -- 
+    -- 
+7943.ntpl.bw01.m     kevin    default  GK.LJ.10.3.10       --      1  --    --    --  Q   -- 
+    -- 
+7944.ntpl.bw01.m     kevin    default  GK.LJ.1.4.10        --      1  --    --    --  Q   -- 
+    -- 
+7945.ntpl.bw01.m     kevin    default  GK.LJ.2.4.10        --      1  --    --    --  Q   -- 
+    -- 
+7946.ntpl.bw01.m     kevin    default  GK.LJ.3.4.10        --      1  --    --    --  Q   -- 
+    -- 
+7947.ntpl.bw01.m     kevin    default  GK.LJ.4.4.10        --      1  --    --    --  Q   -- 
+    -- 
+7948.ntpl.bw01.m     kevin    default  GK.LJ.5.4.10        --      1  --    --    --  Q   -- 
+    -- 
+7949.ntpl.bw01.m     kevin    default  GK.LJ.6.4.10        --      1  --    --    --  Q   -- 
+    -- 
+7950.ntpl.bw01.m     kevin    default  GK.LJ.7.4.10        --      1  --    --    --  Q   -- 
+    -- 
+7951.ntpl.bw01.m     kevin    default  GK.LJ.8.4.10        --      1  --    --    --  Q   -- 
+    -- 
+7952.ntpl.bw01.m     kevin    default  GK.LJ.9.4.10        --      1  --    --    --  Q   -- 
+    -- 
+7953.ntpl.bw01.m     kevin    default  GK.LJ.10.4.10       --      1  --    --    --  Q   -- 
+    -- 
+7954.ntpl.bw01.m     kevin    default  GK.LJ.1.1.11        --      1  --    --    --  Q   -- 
+    -- 
+7955.ntpl.bw01.m     kevin    default  GK.LJ.2.1.11        --      1  --    --    --  Q   -- 
+    -- 
+7956.ntpl.bw01.m     kevin    default  GK.LJ.3.1.11        --      1  --    --    --  Q   -- 
+    -- 
+7957.ntpl.bw01.m     kevin    default  GK.LJ.4.1.11        --      1  --    --    --  Q   -- 
+    -- 
+7958.ntpl.bw01.m     kevin    default  GK.LJ.5.1.11        --      1  --    --    --  Q   -- 
+    -- 
+7959.ntpl.bw01.m     kevin    default  GK.LJ.6.1.11        --      1  --    --    --  Q   -- 
+    -- 
+7960.ntpl.bw01.m     kevin    default  GK.LJ.7.1.11        --      1  --    --    --  Q   -- 
+    -- 
+7961.ntpl.bw01.m     kevin    default  GK.LJ.8.1.11        --      1  --    --    --  Q   -- 
+    -- 
+7962.ntpl.bw01.m     kevin    default  GK.LJ.9.1.11        --      1  --    --    --  Q   -- 
+    -- 
+7963.ntpl.bw01.m     kevin    default  GK.LJ.10.1.11       --      1  --    --    --  Q   -- 
+    -- 
+7964.ntpl.bw01.m     kevin    default  GK.LJ.1.2.11        --      1  --    --    --  Q   -- 
+    -- 
+7965.ntpl.bw01.m     kevin    default  GK.LJ.2.2.11        --      1  --    --    --  Q   -- 
+    -- 
+7966.ntpl.bw01.m     kevin    default  GK.LJ.3.2.11        --      1  --    --    --  Q   -- 
+    -- 
+7967.ntpl.bw01.m     kevin    default  GK.LJ.4.2.11        --      1  --    --    --  Q   -- 
+    -- 
+7968.ntpl.bw01.m     kevin    default  GK.LJ.5.2.11        --      1  --    --    --  Q   -- 
+    -- 
+7969.ntpl.bw01.m     kevin    default  GK.LJ.6.2.11        --      1  --    --    --  Q   -- 
+    -- 
+7970.ntpl.bw01.m     kevin    default  GK.LJ.7.2.11        --      1  --    --    --  Q   -- 
+    -- 
+7971.ntpl.bw01.m     kevin    default  GK.LJ.8.2.11        --      1  --    --    --  Q   -- 
+    -- 
+7972.ntpl.bw01.m     kevin    default  GK.LJ.9.2.11        --      1  --    --    --  Q   -- 
+    -- 
+7973.ntpl.bw01.m     kevin    default  GK.LJ.10.2.11       --      1  --    --    --  Q   -- 
+    -- 
+7974.ntpl.bw01.m     kevin    default  GK.LJ.1.3.11        --      1  --    --    --  Q   -- 
+    -- 
+7975.ntpl.bw01.m     kevin    default  GK.LJ.2.3.11        --      1  --    --    --  Q   -- 
+    -- 
+7976.ntpl.bw01.m     kevin    default  GK.LJ.3.3.11        --      1  --    --    --  Q   -- 
+    -- 
+7977.ntpl.bw01.m     kevin    default  GK.LJ.4.3.11        --      1  --    --    --  Q   -- 
+    -- 
+7978.ntpl.bw01.m     kevin    default  GK.LJ.5.3.11        --      1  --    --    --  Q   -- 
+    -- 
+7979.ntpl.bw01.m     kevin    default  GK.LJ.6.3.11        --      1  --    --    --  Q   -- 
+    -- 
+7980.ntpl.bw01.m     kevin    default  GK.LJ.7.3.11        --      1  --    --    --  Q   -- 
+    -- 
+7981.ntpl.bw01.m     kevin    default  GK.LJ.8.3.11        --      1  --    --    --  Q   -- 
+    -- 
+7982.ntpl.bw01.m     kevin    default  GK.LJ.9.3.11        --      1  --    --    --  Q   -- 
+    -- 
+7983.ntpl.bw01.m     kevin    default  GK.LJ.10.3.11       --      1  --    --    --  Q   -- 
+    -- 
+7984.ntpl.bw01.m     kevin    default  GK.LJ.1.4.11        --      1  --    --    --  Q   -- 
+    -- 
+7985.ntpl.bw01.m     kevin    default  GK.LJ.2.4.11        --      1  --    --    --  Q   -- 
+    -- 
+7986.ntpl.bw01.m     kevin    default  GK.LJ.3.4.11        --      1  --    --    --  Q   -- 
+    -- 
+7987.ntpl.bw01.m     kevin    default  GK.LJ.4.4.11        --      1  --    --    --  Q   -- 
+    -- 
+7988.ntpl.bw01.m     kevin    default  GK.LJ.5.4.11        --      1  --    --    --  Q   -- 
+    -- 
+7989.ntpl.bw01.m     kevin    default  GK.LJ.6.4.11        --      1  --    --    --  Q   -- 
+    -- 
+7990.ntpl.bw01.m     kevin    default  GK.LJ.7.4.11        --      1  --    --    --  Q   -- 
+    -- 
+7991.ntpl.bw01.m     kevin    default  GK.LJ.8.4.11        --      1  --    --    --  Q   -- 
+    -- 
+7992.ntpl.bw01.m     kevin    default  GK.LJ.9.4.11        --      1  --    --    --  Q   -- 
+    -- 
+7993.ntpl.bw01.m     kevin    default  GK.LJ.10.4.11       --      1  --    --    --  Q   -- 
+    -- 
+7994.ntpl.bw01.m     kevin    default  GK.LJ.1.1.12        --      1  --    --    --  Q   -- 
+    -- 
+7995.ntpl.bw01.m     kevin    default  GK.LJ.2.1.12        --      1  --    --    --  Q   -- 
+    -- 
+7996.ntpl.bw01.m     kevin    default  GK.LJ.3.1.12        --      1  --    --    --  Q   -- 
+    -- 
+7997.ntpl.bw01.m     kevin    default  GK.LJ.4.1.12        --      1  --    --    --  Q   -- 
+    -- 
+7998.ntpl.bw01.m     kevin    default  GK.LJ.5.1.12        --      1  --    --    --  Q   -- 
+    -- 
+7999.ntpl.bw01.m     kevin    default  GK.LJ.6.1.12        --      1  --    --    --  Q   -- 
+    -- 
+8000.ntpl.bw01.m     kevin    default  GK.LJ.7.1.12        --      1  --    --    --  Q   -- 
+    -- 
+8001.ntpl.bw01.m     kevin    default  GK.LJ.8.1.12        --      1  --    --    --  Q   -- 
+    -- 
+8002.ntpl.bw01.m     kevin    default  GK.LJ.9.1.12        --      1  --    --    --  Q   -- 
+    -- 
+8003.ntpl.bw01.m     kevin    default  GK.LJ.10.1.12       --      1  --    --    --  Q   -- 
+    -- 
+8004.ntpl.bw01.m     kevin    default  GK.LJ.1.2.12        --      1  --    --    --  Q   -- 
+    -- 
+8005.ntpl.bw01.m     kevin    default  GK.LJ.2.2.12        --      1  --    --    --  Q   -- 
+    -- 
+8006.ntpl.bw01.m     kevin    default  GK.LJ.3.2.12        --      1  --    --    --  Q   -- 
+    -- 
+8007.ntpl.bw01.m     kevin    default  GK.LJ.4.2.12        --      1  --    --    --  Q   -- 
+    -- 
+8008.ntpl.bw01.m     kevin    default  GK.LJ.5.2.12        --      1  --    --    --  Q   -- 
+    -- 
+8009.ntpl.bw01.m     kevin    default  GK.LJ.6.2.12        --      1  --    --    --  Q   -- 
+    -- 
+8010.ntpl.bw01.m     kevin    default  GK.LJ.7.2.12        --      1  --    --    --  Q   -- 
+    -- 
+8011.ntpl.bw01.m     kevin    default  GK.LJ.8.2.12        --      1  --    --    --  Q   -- 
+    -- 
+8012.ntpl.bw01.m     kevin    default  GK.LJ.9.2.12        --      1  --    --    --  Q   -- 
+    -- 
+8013.ntpl.bw01.m     kevin    default  GK.LJ.10.2.12       --      1  --    --    --  Q   -- 
+    -- 
+8014.ntpl.bw01.m     kevin    default  GK.LJ.1.3.12        --      1  --    --    --  Q   -- 
+    -- 
+8015.ntpl.bw01.m     kevin    default  GK.LJ.2.3.12        --      1  --    --    --  Q   -- 
+    -- 
+8016.ntpl.bw01.m     kevin    default  GK.LJ.3.3.12        --      1  --    --    --  Q   -- 
+    -- 
+8017.ntpl.bw01.m     kevin    default  GK.LJ.4.3.12        --      1  --    --    --  Q   -- 
+    -- 
+8018.ntpl.bw01.m     kevin    default  GK.LJ.5.3.12        --      1  --    --    --  Q   -- 
+    -- 
+8019.ntpl.bw01.m     kevin    default  GK.LJ.6.3.12        --      1  --    --    --  Q   -- 
+    -- 
+8020.ntpl.bw01.m     kevin    default  GK.LJ.7.3.12        --      1  --    --    --  Q   -- 
+    -- 
+8021.ntpl.bw01.m     kevin    default  GK.LJ.8.3.12        --      1  --    --    --  Q   -- 
+    -- 
+8022.ntpl.bw01.m     kevin    default  GK.LJ.9.3.12        --      1  --    --    --  Q   -- 
+    -- 
+8023.ntpl.bw01.m     kevin    default  GK.LJ.10.3.12       --      1  --    --    --  Q   -- 
+    -- 
+8024.ntpl.bw01.m     kevin    default  GK.LJ.1.4.12        --      1  --    --    --  Q   -- 
+    -- 
+8025.ntpl.bw01.m     kevin    default  GK.LJ.2.4.12        --      1  --    --    --  Q   -- 
+    -- 
+8026.ntpl.bw01.m     kevin    default  GK.LJ.3.4.12        --      1  --    --    --  Q   -- 
+    -- 
+8027.ntpl.bw01.m     kevin    default  GK.LJ.4.4.12        --      1  --    --    --  Q   -- 
+    -- 
+8028.ntpl.bw01.m     kevin    default  GK.LJ.5.4.12        --      1  --    --    --  Q   -- 
+    -- 
+8029.ntpl.bw01.m     kevin    default  GK.LJ.6.4.12        --      1  --    --    --  Q   -- 
+    -- 
+8030.ntpl.bw01.m     kevin    default  GK.LJ.7.4.12        --      1  --    --    --  Q   -- 
+    -- 
+8031.ntpl.bw01.m     kevin    default  GK.LJ.8.4.12        --      1  --    --    --  Q   -- 
+    -- 
+8032.ntpl.bw01.m     kevin    default  GK.LJ.9.4.12        --      1  --    --    --  Q   -- 
+    -- 
+8033.ntpl.bw01.m     kevin    default  GK.LJ.10.4.12       --      1  --    --    --  Q   -- 
+    -- 
+8034.ntpl.bw01.m     kevin    default  GK.LJ.1.1.13        --      1  --    --    --  Q   -- 
+    -- 
+8035.ntpl.bw01.m     kevin    default  GK.LJ.2.1.13        --      1  --    --    --  Q   -- 
+    -- 
+8036.ntpl.bw01.m     kevin    default  GK.LJ.3.1.13        --      1  --    --    --  Q   -- 
+    -- 
+8037.ntpl.bw01.m     kevin    default  GK.LJ.4.1.13        --      1  --    --    --  Q   -- 
+    -- 
+8038.ntpl.bw01.m     kevin    default  GK.LJ.5.1.13        --      1  --    --    --  Q   -- 
+    -- 
+8039.ntpl.bw01.m     kevin    default  GK.LJ.6.1.13        --      1  --    --    --  Q   -- 
+    -- 
+8040.ntpl.bw01.m     kevin    default  GK.LJ.7.1.13        --      1  --    --    --  Q   -- 
+    -- 
+8041.ntpl.bw01.m     kevin    default  GK.LJ.8.1.13        --      1  --    --    --  Q   -- 
+    -- 
+8042.ntpl.bw01.m     kevin    default  GK.LJ.9.1.13        --      1  --    --    --  Q   -- 
+    -- 
+8043.ntpl.bw01.m     kevin    default  GK.LJ.10.1.13       --      1  --    --    --  Q   -- 
+    -- 
+8044.ntpl.bw01.m     kevin    default  GK.LJ.1.2.13        --      1  --    --    --  Q   -- 
+    -- 
+8045.ntpl.bw01.m     kevin    default  GK.LJ.2.2.13        --      1  --    --    --  Q   -- 
+    -- 
+8046.ntpl.bw01.m     kevin    default  GK.LJ.3.2.13        --      1  --    --    --  Q   -- 
+    -- 
+8047.ntpl.bw01.m     kevin    default  GK.LJ.4.2.13        --      1  --    --    --  Q   -- 
+    -- 
+8048.ntpl.bw01.m     kevin    default  GK.LJ.5.2.13        --      1  --    --    --  Q   -- 
+    -- 
+8049.ntpl.bw01.m     kevin    default  GK.LJ.6.2.13        --      1  --    --    --  Q   -- 
+    -- 
+8050.ntpl.bw01.m     kevin    default  GK.LJ.7.2.13        --      1  --    --    --  Q   -- 
+    -- 
+8051.ntpl.bw01.m     kevin    default  GK.LJ.8.2.13        --      1  --    --    --  Q   -- 
+    -- 
+8052.ntpl.bw01.m     kevin    default  GK.LJ.9.2.13        --      1  --    --    --  Q   -- 
+    -- 
+8053.ntpl.bw01.m     kevin    default  GK.LJ.10.2.13       --      1  --    --    --  Q   -- 
+    -- 
+8054.ntpl.bw01.m     kevin    default  GK.LJ.1.3.13        --      1  --    --    --  Q   -- 
+    -- 
+8055.ntpl.bw01.m     kevin    default  GK.LJ.2.3.13        --      1  --    --    --  Q   -- 
+    -- 
+8056.ntpl.bw01.m     kevin    default  GK.LJ.3.3.13        --      1  --    --    --  Q   -- 
+    -- 
+8057.ntpl.bw01.m     kevin    default  GK.LJ.4.3.13        --      1  --    --    --  Q   -- 
+    -- 
+8058.ntpl.bw01.m     kevin    default  GK.LJ.5.3.13        --      1  --    --    --  Q   -- 
+    -- 
+8059.ntpl.bw01.m     kevin    default  GK.LJ.6.3.13        --      1  --    --    --  Q   -- 
+    -- 
+8060.ntpl.bw01.m     kevin    default  GK.LJ.7.3.13        --      1  --    --    --  Q   -- 
+    -- 
+8061.ntpl.bw01.m     kevin    default  GK.LJ.8.3.13        --      1  --    --    --  Q   -- 
+    -- 
+8062.ntpl.bw01.m     kevin    default  GK.LJ.9.3.13        --      1  --    --    --  Q   -- 
+    -- 
+8063.ntpl.bw01.m     kevin    default  GK.LJ.10.3.13       --      1  --    --    --  Q   -- 
+    -- 
+8064.ntpl.bw01.m     kevin    default  GK.LJ.1.4.13        --      1  --    --    --  Q   -- 
+    -- 
+8065.ntpl.bw01.m     kevin    default  GK.LJ.2.4.13        --      1  --    --    --  Q   -- 
+    -- 
+8066.ntpl.bw01.m     kevin    default  GK.LJ.3.4.13        --      1  --    --    --  Q   -- 
+    -- 
+8067.ntpl.bw01.m     kevin    default  GK.LJ.4.4.13        --      1  --    --    --  Q   -- 
+    -- 
+8068.ntpl.bw01.m     kevin    default  GK.LJ.5.4.13        --      1  --    --    --  Q   -- 
+    -- 
+8069.ntpl.bw01.m     kevin    default  GK.LJ.6.4.13        --      1  --    --    --  Q   -- 
+    -- 
+8070.ntpl.bw01.m     kevin    default  GK.LJ.7.4.13        --      1  --    --    --  Q   -- 
+    -- 
+8071.ntpl.bw01.m     kevin    default  GK.LJ.8.4.13        --      1  --    --    --  Q   -- 
+    -- 
+8072.ntpl.bw01.m     kevin    default  GK.LJ.9.4.13        --      1  --    --    --  Q   -- 
+    -- 
+8073.ntpl.bw01.m     kevin    default  GK.LJ.10.4.13       --      1  --    --    --  Q   -- 
+    -- 
+8074.ntpl.bw01.m     kevin    default  GK.LJ.1.1.14        --      1  --    --    --  Q   -- 
+    -- 
+8075.ntpl.bw01.m     kevin    default  GK.LJ.2.1.14        --      1  --    --    --  Q   -- 
+    -- 
+8076.ntpl.bw01.m     kevin    default  GK.LJ.3.1.14        --      1  --    --    --  Q   -- 
+    -- 
+8077.ntpl.bw01.m     kevin    default  GK.LJ.4.1.14        --      1  --    --    --  Q   -- 
+    -- 
+8078.ntpl.bw01.m     kevin    default  GK.LJ.5.1.14        --      1  --    --    --  Q   -- 
+    -- 
+8079.ntpl.bw01.m     kevin    default  GK.LJ.6.1.14        --      1  --    --    --  Q   -- 
+    -- 
+8080.ntpl.bw01.m     kevin    default  GK.LJ.7.1.14        --      1  --    --    --  Q   -- 
+    -- 
+8081.ntpl.bw01.m     kevin    default  GK.LJ.8.1.14        --      1  --    --    --  Q   -- 
+    -- 
+8082.ntpl.bw01.m     kevin    default  GK.LJ.9.1.14        --      1  --    --    --  Q   -- 
+    -- 
+8083.ntpl.bw01.m     kevin    default  GK.LJ.10.1.14       --      1  --    --    --  Q   -- 
+    -- 
+8084.ntpl.bw01.m     kevin    default  GK.LJ.1.2.14        --      1  --    --    --  Q   -- 
+    -- 
+8085.ntpl.bw01.m     kevin    default  GK.LJ.2.2.14        --      1  --    --    --  Q   -- 
+    -- 
+8086.ntpl.bw01.m     kevin    default  GK.LJ.3.2.14        --      1  --    --    --  Q   -- 
+    -- 
+8087.ntpl.bw01.m     kevin    default  GK.LJ.4.2.14        --      1  --    --    --  Q   -- 
+    -- 
+8088.ntpl.bw01.m     kevin    default  GK.LJ.5.2.14        --      1  --    --    --  Q   -- 
+    -- 
+8089.ntpl.bw01.m     kevin    default  GK.LJ.6.2.14        --      1  --    --    --  Q   -- 
+    -- 
+8090.ntpl.bw01.m     kevin    default  GK.LJ.7.2.14        --      1  --    --    --  Q   -- 
+    -- 
+8091.ntpl.bw01.m     kevin    default  GK.LJ.8.2.14        --      1  --    --    --  Q   -- 
+    -- 
+8092.ntpl.bw01.m     kevin    default  GK.LJ.9.2.14        --      1  --    --    --  Q   -- 
+    -- 
+8093.ntpl.bw01.m     kevin    default  GK.LJ.10.2.14       --      1  --    --    --  Q   -- 
+    -- 
+8094.ntpl.bw01.m     kevin    default  GK.LJ.1.3.14        --      1  --    --    --  Q   -- 
+    -- 
+8095.ntpl.bw01.m     kevin    default  GK.LJ.2.3.14        --      1  --    --    --  Q   -- 
+    -- 
+8096.ntpl.bw01.m     kevin    default  GK.LJ.3.3.14        --      1  --    --    --  Q   -- 
+    -- 
+8097.ntpl.bw01.m     kevin    default  GK.LJ.4.3.14        --      1  --    --    --  Q   -- 
+    -- 
+8098.ntpl.bw01.m     kevin    default  GK.LJ.5.3.14        --      1  --    --    --  Q   -- 
+    -- 
+8099.ntpl.bw01.m     kevin    default  GK.LJ.6.3.14        --      1  --    --    --  Q   -- 
+    -- 
+8100.ntpl.bw01.m     kevin    default  GK.LJ.7.3.14        --      1  --    --    --  Q   -- 
+    -- 
+8101.ntpl.bw01.m     kevin    default  GK.LJ.8.3.14        --      1  --    --    --  Q   -- 
+    -- 
+8102.ntpl.bw01.m     kevin    default  GK.LJ.9.3.14        --      1  --    --    --  Q   -- 
+    -- 
+8103.ntpl.bw01.m     kevin    default  GK.LJ.10.3.14       --      1  --    --    --  Q   -- 
+    -- 
+8104.ntpl.bw01.m     kevin    default  GK.LJ.1.4.14        --      1  --    --    --  Q   -- 
+    -- 
+8105.ntpl.bw01.m     kevin    default  GK.LJ.2.4.14        --      1  --    --    --  Q   -- 
+    -- 
+8106.ntpl.bw01.m     kevin    default  GK.LJ.3.4.14        --      1  --    --    --  Q   -- 
+    -- 
+8107.ntpl.bw01.m     kevin    default  GK.LJ.4.4.14        --      1  --    --    --  Q   -- 
+    -- 
+8108.ntpl.bw01.m     kevin    default  GK.LJ.5.4.14        --      1  --    --    --  Q   -- 
+    -- 
+8109.ntpl.bw01.m     kevin    default  GK.LJ.6.4.14        --      1  --    --    --  Q   -- 
+    -- 
+8110.ntpl.bw01.m     kevin    default  GK.LJ.7.4.14        --      1  --    --    --  Q   -- 
+    -- 
+8111.ntpl.bw01.m     kevin    default  GK.LJ.8.4.14        --      1  --    --    --  Q   -- 
+    -- 
+8112.ntpl.bw01.m     kevin    default  GK.LJ.9.4.14        --      1  --    --    --  Q   -- 
+    -- 
+8113.ntpl.bw01.m     kevin    default  GK.LJ.10.4.14       --      1  --    --    --  Q   -- 
+    -- 
+8114.ntpl.bw01.m     kevin    default  GK.LJ.1.1.15        --      1  --    --    --  Q   -- 
+    -- 
+8115.ntpl.bw01.m     kevin    default  GK.LJ.2.1.15        --      1  --    --    --  Q   -- 
+    -- 
+8116.ntpl.bw01.m     kevin    default  GK.LJ.3.1.15        --      1  --    --    --  Q   -- 
+    -- 
+8117.ntpl.bw01.m     kevin    default  GK.LJ.4.1.15        --      1  --    --    --  Q   -- 
+    -- 
+8118.ntpl.bw01.m     kevin    default  GK.LJ.5.1.15        --      1  --    --    --  Q   -- 
+    -- 
+8119.ntpl.bw01.m     kevin    default  GK.LJ.6.1.15        --      1  --    --    --  Q   -- 
+    -- 
+8120.ntpl.bw01.m     kevin    default  GK.LJ.7.1.15        --      1  --    --    --  Q   -- 
+    -- 
+8121.ntpl.bw01.m     kevin    default  GK.LJ.8.1.15        --      1  --    --    --  Q   -- 
+    -- 
+8122.ntpl.bw01.m     kevin    default  GK.LJ.9.1.15        --      1  --    --    --  Q   -- 
+    -- 
+8123.ntpl.bw01.m     kevin    default  GK.LJ.10.1.15       --      1  --    --    --  Q   -- 
+    -- 
+8124.ntpl.bw01.m     kevin    default  GK.LJ.1.2.15        --      1  --    --    --  Q   -- 
+    -- 
+8125.ntpl.bw01.m     kevin    default  GK.LJ.2.2.15        --      1  --    --    --  Q   -- 
+    -- 
+8126.ntpl.bw01.m     kevin    default  GK.LJ.3.2.15        --      1  --    --    --  Q   -- 
+    -- 
+8127.ntpl.bw01.m     kevin    default  GK.LJ.4.2.15        --      1  --    --    --  Q   -- 
+    -- 
+8128.ntpl.bw01.m     kevin    default  GK.LJ.5.2.15        --      1  --    --    --  Q   -- 
+    -- 
+8129.ntpl.bw01.m     kevin    default  GK.LJ.6.2.15        --      1  --    --    --  Q   -- 
+    -- 
+8130.ntpl.bw01.m     kevin    default  GK.LJ.7.2.15        --      1  --    --    --  Q   -- 
+    -- 
+8131.ntpl.bw01.m     kevin    default  GK.LJ.8.2.15        --      1  --    --    --  Q   -- 
+    -- 
+8132.ntpl.bw01.m     kevin    default  GK.LJ.9.2.15        --      1  --    --    --  Q   -- 
+    -- 
+8133.ntpl.bw01.m     kevin    default  GK.LJ.10.2.15       --      1  --    --    --  Q   -- 
+    -- 
+8134.ntpl.bw01.m     kevin    default  GK.LJ.1.3.15        --      1  --    --    --  Q   -- 
+    -- 
+8135.ntpl.bw01.m     kevin    default  GK.LJ.2.3.15        --      1  --    --    --  Q   -- 
+    -- 
+8136.ntpl.bw01.m     kevin    default  GK.LJ.3.3.15        --      1  --    --    --  Q   -- 
+    -- 
+8137.ntpl.bw01.m     kevin    default  GK.LJ.4.3.15        --      1  --    --    --  Q   -- 
+    -- 
+8138.ntpl.bw01.m     kevin    default  GK.LJ.5.3.15        --      1  --    --    --  Q   -- 
+    -- 
+8139.ntpl.bw01.m     kevin    default  GK.LJ.6.3.15        --      1  --    --    --  Q   -- 
+    -- 
+8140.ntpl.bw01.m     kevin    default  GK.LJ.7.3.15        --      1  --    --    --  Q   -- 
+    -- 
+8141.ntpl.bw01.m     kevin    default  GK.LJ.8.3.15        --      1  --    --    --  Q   -- 
+    -- 
+8142.ntpl.bw01.m     kevin    default  GK.LJ.9.3.15        --      1  --    --    --  Q   -- 
+    -- 
+8143.ntpl.bw01.m     kevin    default  GK.LJ.10.3.15       --      1  --    --    --  Q   -- 
+    -- 
+8144.ntpl.bw01.m     kevin    default  GK.LJ.1.4.15        --      1  --    --    --  Q   -- 
+    -- 
+8145.ntpl.bw01.m     kevin    default  GK.LJ.2.4.15        --      1  --    --    --  Q   -- 
+    -- 
+8146.ntpl.bw01.m     kevin    default  GK.LJ.3.4.15        --      1  --    --    --  Q   -- 
+    -- 
+8147.ntpl.bw01.m     kevin    default  GK.LJ.4.4.15        --      1  --    --    --  Q   -- 
+    -- 
+8148.ntpl.bw01.m     kevin    default  GK.LJ.5.4.15        --      1  --    --    --  Q   -- 
+    -- 
+8149.ntpl.bw01.m     kevin    default  GK.LJ.6.4.15        --      1  --    --    --  Q   -- 
+    -- 
+8150.ntpl.bw01.m     kevin    default  GK.LJ.7.4.15        --      1  --    --    --  Q   -- 
+    -- 
+8151.ntpl.bw01.m     kevin    default  GK.LJ.8.4.15        --      1  --    --    --  Q   -- 
+    -- 
+8152.ntpl.bw01.m     kevin    default  GK.LJ.9.4.15        --      1  --    --    --  Q   -- 
+    -- 
+8153.ntpl.bw01.m     kevin    default  GK.LJ.10.4.15       --      1  --    --    --  Q   -- 
+    -- 
