@@ -15,13 +15,7 @@ if strcmp(NMD.system(1).str,'LJ')==1
     
     end
 
-%elseif NMD.system(1).str == 'Si'
 end
-    
-
-%NMD.kptlist = create_kptlist( NMD.x0.latvec, NMD.x0.Nx, NMD.x0.Ny, NMD.x0.Nz );
-
-%output_universal( NMD );
 
 end
 

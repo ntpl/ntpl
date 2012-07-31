@@ -29,9 +29,9 @@ clear
     	NMD.x0.superlattice.period = [12.0  0.0  0.0 
                                       0.0  1.0  0.0 
                                       0.0  0.0  1.0];
-	NMD.x0.atype(1).str = 'Ar1' ;  NMD.x0.atype(2).str = 'Ar2' ;
-	NMD.x0.amass(1) = 39.948;      NMD.x0.amass(2) = 119.844;
-	NMD.seed.superlattice = 1;
+        NMD.x0.atype(1).str = 'Ar1' ;  NMD.x0.atype(2).str = 'Ar2' ;
+        NMD.x0.amass(1) = 39.948;      NMD.x0.amass(2) = 119.844;
+        NMD.seed.superlattice = 1;
         NMD.x0.alat(1) = 6.2529/4*NMD.x0.superlattice.period(1,1);
         NMD.x0.alat(2) = 6.2529/4*NMD.x0.superlattice.period(2,2);
         NMD.x0.alat(3) = 6.2529/4*NMD.x0.superlattice.period(3,3);
@@ -53,7 +53,7 @@ clear
     	NMD.matlab.walltime = 24; 
     	NMD.matlab.cpu = 1; 
     	NMD.matlab.mem = 2;
-	NMD.gulp.path = '/home/jason/GULP/gulp.4.0/Src';
+        NMD.gulp.path = '/home/jason/GULP/gulp.4.0/Src';
     	NMD.gulp.exe = 'gulp_ifort';
     elseif strcmp(NMD.env,'ntpl')
     	NMD.lmp.path = '/home/jason/lammps/lammps-10Oct10/src';
@@ -64,14 +64,14 @@ clear
     	NMD.matlab.path = '/home/jason/matlab/matlab_R2010a/bin';
     	NMD.matlab.lib = '/home/jason/matlab/matlab_R2010a/work';
     	%NMD.gulp.matlab.lib = '/home/jason/Documents/MATLAB/nmd';
-	NMD.gulp.matlab.lib = NMD.str.main;
+        NMD.gulp.matlab.lib = NMD.str.main;
     	NMD.matlab.exe = 'matlab'
     	NMD.matlab.walltime = 24; 
     	NMD.matlab.cpu = 1; 
     	NMD.matlab.mem = 8;
-	NMD.gulp.path = '/home/jason/GULP/Src';
-    	NMD.gulp.exe = 'gulp';
-	NMD.gulp.str.main = NMD.str.main;
+        NMD.gulp.path = '/home/jason/GULP/Src';
+       	NMD.gulp.exe = 'gulp';
+        NMD.gulp.str.main = NMD.str.main;
     end 
 %--------------------------------------------------------------------------
     NMD.x0.Nx = 4; NMD.x0.Ny = 6; NMD.x0.Nz = 6;

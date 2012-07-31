@@ -1,8 +1,5 @@
 function m_nmd_lmp_create_sh(NMD)
 
-
-%for NMD.seed.superlattice =1:size(NMD.seed.superlattice ,2)
-
     str.cmd = ['rm -r ./' int2str(NMD.seed.superlattice )];
     system(str.cmd);
 
@@ -12,10 +9,6 @@ function m_nmd_lmp_create_sh(NMD)
     str.cmd = ['mkdir -p ./' int2str(NMD.seed.superlattice )];
     system(str.cmd);
     
-    %str.cmd = ['cp sh.nmd_lmp.sh ./' int2str(NMD.seed.superlattice ) '/lmp_submit.sh'];
-    %system(str.cmd);    
-
-
 %loops over initial seeds
     for iseed=1:size(NMD.seed.initial,2)
         
@@ -58,5 +51,4 @@ function m_nmd_lmp_create_sh(NMD)
     	dlmwrite(str.write,output,'-append','delimiter','');
      end
     end 
-%end
 end

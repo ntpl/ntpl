@@ -1,11 +1,8 @@
 function nmd_lmp_create_in( NMD )
 
-	%seeds1{:}=num2str(ceil(abs(100000*randn(1,NMD.seed.NUM_SEEDS))));
-	%seeds = sprintf('%s \t',seeds1{:})
      for l=1:1:NMD.seed.NUM_SEEDS
 	 seeds1{:}=num2str(ceil(abs(100000*randn(1,1))));
 	 seeds = sprintf('%s \t',seeds1{:})
-%lmp.in.sed.iseed
         str.orig = 'IN.X0';
         str.change = ['lmp.in.x0.' NMD.system(2).str];
         str.cmd1 = ['-e ''s/\<' str.orig '\>/' str.change '/g'' '];

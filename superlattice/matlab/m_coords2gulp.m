@@ -1,8 +1,6 @@
 function gulp = m_coords2gulp( gulp, x0 )
 	 formats ='%2.6f'
-	 %{
-	
-	  %}
+     
       if strcmp(x0.type(2).str,'GAMMA')
 	 for l=1:1:length(x0.pos(:,1))
 		if x0.pos(l,2) == 1
