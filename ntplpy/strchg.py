@@ -3,6 +3,7 @@
 ## ## ## common text manipulation operations.
 ## ## ## Created: 07/29/2012 - KDP
 ## ## ## Last Edited: 07/31/2012 - KDP
+import os
 
 def sed(strings, orig, new):
 	"""
@@ -32,15 +33,15 @@ def sed(strings, orig, new):
 	## Create concatenated string of command expressions
 	commands = ''
 	for key in strings:
-		commands.append('-e \'s/' + key + '/' + strings[key] + '/g\' ')
+		commands = commands +'-e \'s/' + str(key) + '/' + str(strings[key]) + '/g\' '
 	
 	## Execute the sed command for new file or --in-place
 	if new == '':
-		os.system('sed -i ' + commands + orig)
+		os.system('sed -i ' + commands + str(orig))
 	else:
-		os.system('sed ' + commands + orig + ' > ' + new)
+		os.system('sed ' + commands + str(orig) + ' > ' + str(new))
 ##### END SED
 
 
 def grep(self):
-
+	return None
