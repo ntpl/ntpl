@@ -2,7 +2,7 @@
 ## ## ## This program creates lattice data files
 ## ## ## Created: 06/21/2012 - KDP
 ## ## ## Last Edited: 06/25/2012 - KDP
-# this is a test here
+
 from sys import exit
 
 ## ## ## lammps class
