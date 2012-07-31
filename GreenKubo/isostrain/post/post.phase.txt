@@ -1,4 +1,0 @@
-s	s	s	s	s	s	s	s	s	s	s	s	s	sg	sg
-s	s	s	s	s	s	s	s	s	s	s	s	l	lg	lg
-s	s	s	s	s	s	s	s	s	s	l	l	l	l	l
-s	s	l	l	l	l	l	l	l	l	l	l	l	l	lg
