@@ -61,7 +61,7 @@ Table of Contents:
 			ntpy.lattice.Lammps.buildLammps(blocks)
 			Parameters
 			----------
-				blocks : list of type block
+				blocks : list of type Block
 					The blocks used to build the lammps file. Blocks
 					should be put in order of origin to z-direction
 					max.
@@ -81,7 +81,7 @@ Table of Contents:
 			ntpy.lattice.Xyz.buildXyz(blocks)
 			Parameters
 			----------
-				blocks : list of type block
+				blocks : list of type Block
 					The blocks used to build the lammps file. Blocks
 					should be put in order of origin to z-direction
 					max.
