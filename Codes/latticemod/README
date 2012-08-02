@@ -5,12 +5,12 @@ Table of Contents:
 	[1.3] - Lattice structures
 	[1.4] - Boundaries
 [2.0] - Documentation
-	[2.1] - class lammps
-		[2.1.1] - def buildlammps
-	[2.2] - class xyz
-		[2.2.1] - def build xyz
-	[2.3] - class block
-	[2.4] - def print_basis
+	[2.1] - class Lammps
+		[2.1.1] - def buildLammps
+	[2.2] - class Xyz
+		[2.2.1] - def buildXyz
+	[2.3] - class Block
+	[2.4] - def printBasis
 
 -----------------------------
 
@@ -46,19 +46,19 @@ Table of Contents:
 			Multiple boundaries in x, y, and z directions -KDP
 
 [2.0] - Documentation
-	[2.1] - class lammps
+	[2.1] - class Lammps
 		Creates and object that represents a single lammps file
 
-		lattice.lammps(file_name)
+		ntpy.lattice.Lammps(file_name)
 		Parameters
 		----------
 			file_name : str
 				The name of the lammps file
 
-		[2.1.1] - def buildlammps
+		[2.1.1] - def buildLammps
 			This creates and writes the lammps file based on the blocks provided
 
-			lattice.lammps.buildlammps(blocks)
+			ntpy.lattice.Lammps.buildLammps(blocks)
 			Parameters
 			----------
 				blocks : list of type block
@@ -66,19 +66,19 @@ Table of Contents:
 					should be put in order of origin to z-direction
 					max.
 
-	[2.2] - class xyz
+	[2.2] - class Xyz
 		Creates an object that represents a single xyz file.
 
-		lattice.xyz(file_name)
+		ntpy.lattice.Xyz(file_name)
 		Parameters
 		----------
 			file_name : str
 				The name of the xyz file
 
-		[2.2.1] - def buildxyz
+		[2.2.1] - def buildXyz
 			This creates and writes the xyz file based on the blocks provided
 
-			lattice.xyz.buildxyz(blocks)
+			ntpy.lattice.Xyz.buildXyz(blocks)
 			Parameters
 			----------
 				blocks : list of type block
@@ -86,10 +86,10 @@ Table of Contents:
 					should be put in order of origin to z-direction
 					max.
 
-	[2.3] - class block
+	[2.3] - class Block
 		Defines a singular lattice that can linearly interfaced with other lattices
 
-		lattice.block(lat_vector, lat_type, dim, bd_space=0, atom_mass=None, atom_type=None)
+		ntpy.lattice.Block(lat_vector, lat_type, dim, bd_space=0, atom_mass=None, atom_type=None)
 		Parameters
 		----------
 			lat_vector : list of type float
@@ -114,10 +114,10 @@ Table of Contents:
 			atom_type : list of type str, optional
 				The atom types of the lattice. Required for xyz files.
 
-	[2.4] - def print_basis
+	[2.4] - def printBasis
 		Prints the basis vectors defined in this module for reference
 
-		lattice.print_basis(lat_type)
+		ntpy.lattice.printBasis(lat_type)
 		Parameters
 		----------
 			lat_type : str
