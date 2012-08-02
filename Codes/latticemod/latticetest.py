@@ -1,10 +1,12 @@
 ## ## ## This script will provide examples of how to implement
 ## ## ## the lattice module
 
+ntplPATH = 'home/kevin/ntpl'
+
 # First import the module
 import sys
-sys.path.append('/home/kevin/ntpl') # Needed to link the ntplpy module
-import ntplpy.lattice as lt
+sys.path.append(ntplPATH) # Needed to link the ntplpy module
+import ntpy.lattice as lt
 
 ## ## Create single lammps file with single lattice.
 ## ## This is the most basic case possible.

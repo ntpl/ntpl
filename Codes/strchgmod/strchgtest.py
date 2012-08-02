@@ -7,7 +7,7 @@ ntplPATH = '/home/kevin/ntpl'
 import os
 import sys
 sys.path.append(ntplPATH) # Needed to link the ntplpy module
-import ntplpy.strchg as st
+import ntpy.strchg as st
 
 ## ## We will use the sed command. First, create a dict of key value pairs.
 ## ## Each key is an original string and each value is the new string.
