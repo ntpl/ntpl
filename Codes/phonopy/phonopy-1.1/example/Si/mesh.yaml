@@ -1,0 +1,20 @@
+mesh: [     1,     1,     1 ]
+nqpoint: 1      
+natom:   2      
+phonon:
+- q-position: [    0.0000000,    0.0000000,    0.0000000 ]
+  weight: 1    
+  band:
+  - # 1
+    frequency:    -0.0035080611
+  - # 2
+    frequency:    -0.0035080611
+  - # 3
+    frequency:    -0.0035080611
+  - # 4
+    frequency:    15.1111964993
+  - # 5
+    frequency:    15.1111964993
+  - # 6
+    frequency:    15.1111964993
+
