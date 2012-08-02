@@ -3,8 +3,6 @@
 ## ## ## Created: 06/21/2012 - KDP
 ## ## ## Last Edited: 06/25/2012 - KDP
 
-from sys import exit
-
 ## ## ## lammps class
 class Lammps:
 	"""
@@ -71,15 +69,14 @@ class Lammps:
 		y_max = 0 #initalize y_max
 		z_max = 0 #initalize z_max
 		
-		## Parameter check
+		## Assertions
 		for i in range(len(blocks)):
-			if blocks[i].atom_mass == None:
-				exit("ERROR: atom_mass parameter for "+ str(blocks[i])+ " block does not exist.")
+			assert blocks[i].atom_mass != None, "atom_mass parameter for "+ str(blocks[i])+ " block does not exist."
 			if len(blocks[i].atom_mass) > 1:
-				if len(blocks[i].atom_mass) != len(blocks[i].basis):
-					exit("ERROR: When declaring multiple species, the \"atom_mass\" parameter must be\n"+
-							"the same length as the number of atoms in the basis vector. For more info\n"+
-							"check the documentation (also lammps.print_basis).")
+				assert len(blocks[i].atom_mass) == len(blocks[i].basis), \
+					"When declaring multiple species, the \"atom_mass\" parameter must be\n"+ \
+					"the same length as the number of atoms in the basis vector. For more info\n"+ \
+					"check the documentation (also Lammps.printBasis)."
 
 		## Loop over all Blocks
 		for i in range(len(blocks)):
@@ -181,15 +178,14 @@ class Xyz:
 		y_max = 0 #initalize y_max
 		z_max = 0 #initalize z_max
 
-		## Parameter check
+		## Assertions
 		for i in range(len(blocks)):
-			if blocks[i].atom_type == None:
-				exit("ERROR: atom_type parameter for "+ str(blocks[i])+ " block does not exist.")
+			assert blocks[i].atom_type != None, "atom_type parameter for "+ str(blocks[i])+ " block does not exist."
 			if len(blocks[i].atom_type) > 1:
-				if len(blocks[i].atom_type) != len(blocks[i].basis):
-					exit("ERROR: When declaring multiple species, the \"atom_type\" parameter must be\n"+
-							"the same length as the number of atoms in the basis vector. For more info\n"+
-							"check the documentation (also lattice.print_basis).")
+				assert len(blocks[i].atom_type) == len(blocks[i].basis), \
+					"When declaring multiple species, the \"atom_type\" parameter must be\n"+ \
+					"the same length as the number of atoms in the basis vector. For more info\n"+ \
+					"check the documentation (also Lammps.printBasis)."
 
 		## Loop over all Blocks
 		for i in range(len(blocks)):
@@ -246,16 +242,20 @@ class Block:
 		self.atom_mass = atom_mass
 		self.atom_type = atom_type
 		self.basis = []
+
 		if lat_type=='sc' or lat_type=='cP' or lat_type=='cP1' or lat_type=='simple cubic' or lat_type=='primitive cubic':
 			self.basis = ([ [0.0, 0.0, 0.0] ])
+			success = True
 		elif lat_type=='bcc' or lat_type=='cI' or lat_type=='cI2' or lat_type=='body centered cubic':
 			self.basis = ([ [0.0, 0.0, 0.0],
 				[0.5, 0.5, 0.5] ])
+			success = True
 		elif lat_type=='fcc' or lat_type=='cF' or lat_type=='cF4' or lat_type=='face centered cubic':
 			self.basis = ([ [0.0, 0.0, 0.0],
 				[0.5, 0.5, 0.0],
 				[0.5, 0.0, 0.5],
 				[0.0, 0.5, 0.5] ])
+			success = True
 		elif lat_type=='diamond' or lat_type=='cF8':
 			self.basis = ([ [0.0, 0.0, 0.0],
 				[0.5, 0.5, 0.0],
@@ -265,8 +265,11 @@ class Block:
 				[0.75, 0.75, 0.25],
 				[0.75, 0.25, 0.75],
 				[0.25, 0.75, 0.75] ])
+			success = True
 		else:
-			exit("ERROR: Only types \'sc\', \'fcc\', \'bcc\', \'diamond\' are supported")
+			success = False
+		
+		assert success, "Only types \'sc\', \'fcc\', \'bcc\', \'diamond\' are supported"
 
 	#-- END __init__ --#
 #-- END Block --#

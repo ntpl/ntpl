@@ -47,7 +47,7 @@ myxyz.buildXyz([mylat])
 
 ## ## Another cool ability of the lattice module is multi-species lattices
 
-mylamp = lt.Xyz('test_4.xyz')
+mylamp = lt.Lammps('test_4.txt')
 # Here we simply add the extra masses to out 'atom_mass' parameter to match the atoms
 # in our basis vector. Therefore, our 'atom_mass' parameter must have the same length
 # as the number of atoms in our basis vector
