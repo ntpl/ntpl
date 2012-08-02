@@ -21,7 +21,7 @@ mydict = dict({'sed': 'MARIO', 'dict': 'LUIGI'})
 
 ## Then simply call the function with the original and new file names.
 st.sed(mydict, 'strchgtest.py', 'tmp.newfile')
-## ## And you're done!!!
+### And you're done!!!
 
 ## If you want to edit the file in-place, i.e. not create a new file,
 ## then simply make the new file name a blank string.
@@ -32,6 +32,11 @@ mydict = dict({'sed': 'MARIO', 'dict': 'LUIGI'})
 orig = ntplPATH + '/strchgmod/strchgtest.py'
 new = './tmp.newfile'
 st.sed(mydict, orig, new)
+
+## ## Now we will try the grep command. This grep implementation uses
+## ## the grep -A command.
+
+st.grep('Import the module', 4, strchgtest.py, tmp.newfile)
 
 #cleanup
 os.system('rm tmp.newfile')
