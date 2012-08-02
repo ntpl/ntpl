@@ -43,7 +43,7 @@ def sed(strings, orig, new):
 ##### END SED
 
 
-def grep(self, pattern, lines, orig, new):
+def grep(pattern, lines, orig, new):
 	"""
 	Simplifies and executes the grep -A terminal command
 
@@ -67,7 +67,8 @@ def grep(self, pattern, lines, orig, new):
 			be the absolute or relative pathway to the file.
 	"""	
 
-	os.system('grep -A \"' + str(pattern) + '\" ' + str(orig) + ' > ' + str(new))
+	os.system('grep -A ' + str(int(lines)) + ' \"' + str(pattern) + '\" ' + str(orig) + 
+						' > ' + str(new))
 
 
 

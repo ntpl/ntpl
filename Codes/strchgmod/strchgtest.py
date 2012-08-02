@@ -1,7 +1,7 @@
 ## ## ## This script will provide examples of how to implement
 ## ## ## the ntplpy.strchg module
 
-ntplPATH = '/home/kevin/ntpl'
+ntplPATH = '/home/kevin/ntpl/Codes'
 
 ## Import the module
 import os
@@ -36,7 +36,9 @@ st.sed(mydict, orig, new)
 ## ## Now we will try the grep command. This grep implementation uses
 ## ## the grep -A command.
 
-st.grep('Import the module', 4, strchgtest.py, tmp.newfile)
+## Simply pass it the search string, number of lines to pull, the original
+## file name and the new file name.
+st.grep('Import the module', 4, 'strchgtest.py', 'tmp.newfile')
 
 #cleanup
 os.system('rm tmp.newfile')
