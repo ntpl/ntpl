@@ -1,10 +1,12 @@
 ## ## ## This script will provide examples of how to implement
 ## ## ## the lattice module
 
+ntplPATH = 'home/kevin/ntpl/Codes'
+
 # First import the module
 import sys
-sys.path.append('/home/kevin/ntpl') # Needed to link the ntplpy module
-import ntplpy.lattice as lt
+sys.path.append(ntplPATH) # Needed to link the ntplpy module
+import ntpy.lattice as lt
 
 ## ## Create single lammps file with single lattice.
 ## ## This is the most basic case possible.
@@ -47,7 +49,7 @@ myxyz.buildXyz([mylat])
 
 ## ## Another cool ability of the lattice module is multi-species lattices
 
-mylamp = lt.Xyz('test_4.xyz')
+mylamp = lt.Lammps('test_4.txt')
 # Here we simply add the extra masses to out 'atom_mass' parameter to match the atoms
 # in our basis vector. Therefore, our 'atom_mass' parameter must have the same length
 # as the number of atoms in our basis vector

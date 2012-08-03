@@ -9,7 +9,7 @@ def sed(strings, orig, new):
 	"""
 	Simplifies and executes the sed terminal command
 
-	ntplpy.strchg.sed(strings, orig, new)
+	ntpy.strchg.sed(strings, orig, new)
 	Parameters
 	----------
 		strings : dict of type str
@@ -43,5 +43,32 @@ def sed(strings, orig, new):
 ##### END SED
 
 
-def grep(self):
-	return None
+def grep(pattern, lines, orig, new):
+	"""
+	Simplifies and executes the grep -A terminal command
+
+	ntpy.strchg.sed(pattern, lines, orig, new)
+	Parameters
+	----------
+		pattern : str
+			A string of the pattern that grep should search
+			for.
+		lines : int
+			An integer of how many lines to pull after
+			pattern match.
+		orig : str
+			A string containing the original file name. If
+			the file is not included in the pathway then it
+			can be the absolute or relative pathway to the
+			file.
+		new : str
+			A string containing the new file name. If the
+			file is not included in the pathway then it can
+			be the absolute or relative pathway to the file.
+	"""	
+
+	os.system('grep -A ' + str(int(lines)) + ' \"' + str(pattern) + '\" ' + str(orig) + 
+						' > ' + str(new))
+
+
+
