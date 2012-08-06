@@ -1,0 +1,68 @@
+Table of Contents:
+[1.0] - Developer's section
+	[1.1] - Notes
+	[1.2] - Commands
+[2.0] - Documentation
+	[2.1] - def sed
+	[2.2] - def grep
+
+-----------------------------
+
+[1.0] - Developer's section
+	[1.1] - Any changes to the documentation of this package
+		should be reflected in this file as well as the doc strings
+		of the module, with the exception of example code which
+		should only be included in this file.
+	[1.2] - File types
+	File types 
+		Supported:
+			sed (alpha)
+			grep (alpha)
+		Planned:
+		Suggested:
+
+[2.0] - Documentation
+	[2.1] - def sed 
+		Simplifies and executes the sed terminal command
+
+		ntpy.strchg.sed(strings, orig, new)
+		Parameters
+		----------
+			strings : dict of type str
+				A dictionary holding key:value pairs. Each key
+				is original string to be replaced and each value
+				is the new string to be subsituted.
+			orig : str
+				A string containing the original file name. If
+				the file is not included in the pathway then it
+				can be the absolute or relative pathway to the
+				file.
+			new : str
+				A string containing the new file name. If the
+				file is not included in the pathway then it can
+				be the absolute or relative pathway to the file.
+				An empty string activates the --in-place (-i)
+				switch, which edits the original file without
+				creating a new one.
+
+	[2.2] - def grep 
+		Simplifies and executes the grep -A terminal command
+
+		ntpy.strchg.sed(pattern, lines, orig, new)
+		Parameters
+		----------
+			pattern : str
+				A string of the pattern that grep should search
+				for.
+			lines : int
+				An integer of how many lines to pull after
+				pattern match.
+			orig : str
+				A string containing the original file name. If
+				the file is not included in the pathway then it
+				can be the absolute or relative pathway to the
+				file.
+			new : str
+				A string containing the new file name. If the
+				file is not included in the pathway then it can
+				be the absolute or relative pathway to the file.
