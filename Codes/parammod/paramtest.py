@@ -13,5 +13,7 @@ import ntpy.param as pm
 ##	First, create a key:value dict.
 lat20 = (pm.lj('lat20') / pm.lj('sigma')) * 1e-10
 
-
 print lat20
+
+print pm.lj(lat20)
+
