@@ -1,5 +1,5 @@
 ## ## ## This script will provide examples of how to implement
-## ## ## the ntplpy.strchg module
+## ## ## the ntpy.param module
 ntplPATH = '/home/kevin/projects/ntpl/Codes'
 
 ## Import the module
@@ -15,5 +15,4 @@ lat20 = (pm.lj('lat20') / pm.lj('sigma')) * 1e-10
 
 print lat20
 
-print pm.lj(lat20)
 

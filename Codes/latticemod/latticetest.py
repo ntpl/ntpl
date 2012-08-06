@@ -1,7 +1,7 @@
 ## ## ## This script will provide examples of how to implement
-## ## ## the lattice module
+## ## ## the ntpy lattice module
 
-ntplPATH = 'home/kevin/ntpl/Codes'
+ntplPATH = 'home/kevin/projects/ntpl/Codes'
 
 # First import the module
 import sys

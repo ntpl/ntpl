@@ -1,7 +1,7 @@
 ## ## ## This script will provide examples of how to implement
-## ## ## the ntplpy.strchg module
+## ## ## the ntpy.strchg module
 
-ntplPATH = '/home/kevin/ntpl/Codes'
+ntplPATH = '/home/kevin/projects/ntpl/Codes'
 
 ## Import the module
 import os
