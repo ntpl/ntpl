@@ -26,11 +26,12 @@ def lj(string):
 					'tau' : 2.14e-12})	# Tau constant for argon in seconds
 
 	try:
-		ljvalue = ljparams[string]
-	except LookupError, e:
+		return ljparams[string]
+	except UnboundLocalError, e:
+		print "Error: %s" % e
+	except NameError, e:
 		print "Error: %s" % e
 	
-	return ljvalue
 ##### END LJ
 
 def const(string):
@@ -49,12 +50,11 @@ def const(string):
 					'stops' : 1e-12})	# Seconds to picoseconds
 
 	try:
-		constvalue = constparams[string]
-	except ValueError, e:
+		return constparams[string]
+	except UnboundLocalError, e:
 		print "Error: %s" % e
-	except LookupError, e:
+	except NameError, e:
 		print "Error: %s" % e
 	
-	return constvalue
 ##### END LJ
 
