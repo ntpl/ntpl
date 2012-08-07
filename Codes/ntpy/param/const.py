@@ -2,7 +2,7 @@
 ## ## ## This program returns common parameters
 ## ## ## Created: 08/07/2012 - KDP
 
-def const(string):
+def value(string):
 	"""
 	Returns common constant parameters.
 
@@ -35,5 +35,5 @@ def const(string):
 		print "KeyError: %s is not a valid key for ntpy.param.const()." % e
 		raise
 	
-##### END LJ
+##### END VALUE
 
