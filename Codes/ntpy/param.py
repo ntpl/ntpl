@@ -3,35 +3,62 @@
 ## ## ## Created: 08/05/2012 - KDP
 ## ## ## Last Edited: 08/05/2012 - KDP
 
-def lj(string):
-	"""
-	Returns common parameters for lj argon.
+import numpy as np
 
-	ntpy.param.lj(string)
-	Parameters
-	----------
-		string : str
+class lj:
+	def value(string):
+		"""
+		Returns common parameters for lj argon.
+	
+		ntpy.param.lj.value(string)
+		Parameters
+		----------
+			string : str
 			A string that corresponds to a lennard jones argon parameter.
-	"""
+		"""
+	
+		ljparams = dict({
+						'lat0' : 5.269,		# Lat constant at 0 K in ang
+						'lat20' : 5.315,	# Lat constant at 20 K in ang
+						'lat35' : 5.355,	# Lat constant at 35 K in ang
+						'lat50' : 5.401,	# Lat constant at 50 K in ang
+						'lat65' : 5.455,	# Lat constant at 65 K in ang
+						'lat80' : 5.527,	# Lat constant at 80 K in ang
+						'epsilon' : 1.67e-21,	# Epsilon constant in joules
+						'sigma' : 3.40e-10,	# Sigma constant in meters
+						'mass' : 6.63e-26,	# Mass constant in kilograms
+						'tau' : 2.14e-12	# Tau constant in seconds
+						})	
 
-	ljparams = dict({
-					'lat0' : 5.269,		# Lattice constant for argon at 0 K in angstroms
-					'lat20' : 5.315,	# Lattice constant for argon at 20 K in angstroms
-					'lat35' : 5.355,	# Lattice constant for argon at 35 K in angstroms
-					'lat50' : 5.401,	# Lattice constant for argon at 50 K in angstroms
-					'lat65' : 5.455,	# Lattice constant for argon at 65 K in angstroms
-					'lat80' : 5.527,	# Lattice constant for argon at 80 K in angstroms
-					'epsilon' : 1.67e-21,	# Epsilon constant for argon in joules
-					'sigma' : 3.40e-10,	# Sigma constant for argon in meters
-					'mass' : 6.63e-26,	# Mass constant for argon in kilograms
-					'tau' : 2.14e-12	# Tau constant for argon in seconds
-					})	
+		try:
+			return ljparams[string]
+		except KeyError, e:
+			print "KeyError: %s is not a valid key for ntpy.param.lj()." % e
+			raise	
+	##### END DICT
 
-	try:
-		return ljparams[string]
-	except KeyError, e:
-		print "KeyError: %s is not a valid key for ntpy.param.lj()." % e
-		raise	
+	def latfit(string):
+		"""
+		Returns lattice constants for lj argon based off of a polyfit
+	
+		ntpy.param.lj.latfit(string)
+		Parameters
+		----------
+			string : str
+				A string that corresponds to a temperature between 0 and 80K
+		"""
+		usertemp = float(string)
+
+		assert usertemp <= 80 and usertemp >= 0, \
+			"Error: %s is not between 0 and 80 exclusive" % usertemp
+
+		temp = [0, 20, 35, 50, 65, 80]
+		constants = [5.269, 5.315, 5.355, 5.401, 5.455, 5.527]
+
+		fitparams = np.polyfit(temp, constants, 4)
+		fit = np.poly1d(fitparams)
+		return fit(usertemp)
+	##### END LATFIT
 ##### END LJ
 
 def const(string):
