@@ -16,17 +16,19 @@ def value(string):
 	constparams = dict({
 					'kb' : 1.3806e-23,	# Boltzmann's constant
 					'hbar' : 1.054e-34,	# Planck's constant
-					'topeta' : 1e15,	# To peta-
-					'totera' : 1e12,	# To tera-
-					'togiga' : 1e9,	# To giga-
-					'tomega' : 1e6,	# To mega-
-					'tokilo' : 1e3,	# To kilo-
-					'tocenti' : 1e-2,	# To centi-
-					'tomilli' : 1e-3,	# To milli-
-					'tomicro' : 1e-6,	# To micro-
-					'tonano' : 1e-9,	# To nano-
-					'topico' : 1e-12,	# To pico-
-					'tofemto' : 1e-15,	# To femto-
+					'avog' : 6.0221414e23, # Avogadro's number
+					'c' : 299792485.0, # Speed of light m/s
+					'topeta' : 1e-15,	# To peta-
+					'totera' : 1e-12,	# To tera-
+					'togiga' : 1e-9,	# To giga-
+					'tomega' : 1e-6,	# To mega-
+					'tokilo' : 1e-3,	# To kilo-
+					'tocenti' : 1e2,	# To centi-
+					'tomilli' : 1e3,	# To milli-
+					'tomicro' : 1e6,	# To micro-
+					'tonano' : 1e9,	# To nano-
+					'topico' : 1e12,	# To pico-
+					'tofemto' : 1e15,	# To femto-
 					})
 
 	try:
