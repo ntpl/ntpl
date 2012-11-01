@@ -36,8 +36,8 @@ def freq(strchg, numAtomsUC, gulpName, tempName):
 	# String change the template file
 	st.sed(strchg, gulpName, tempName)
 	# Execute the new gulp file
-	# os.system('gulp '+ tempName+ ' '+ tempName)
-	os.system('gulp <'+ tempName)
+	os.system('gulp <'+ tempName+ ' > output.gulp')
+	# os.system('gulp '+ tempName+ ' output.gulp')
 	# Extract the frequencies
 	freq = np.zeros( (3 * numAtomsUC), dtype=float)
 	freq = np.loadtxt(tempName+ '.freq', comments='--')
