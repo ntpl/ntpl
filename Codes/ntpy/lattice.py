@@ -1,7 +1,55 @@
 ## ## ## lattice.py v.0.1
 ## ## ## This program creates lattice data files
 ## ## ## Created: 06/21/2012 - KDP
-## ## ## Last Edited: 06/25/2012 - KDP
+## ## ## Last Edited: 11/26/2012 - KDP
+
+import numpy as np
+
+def buildNumpy(blocks):
+	"""
+	This creates numpy array based on the blocks provided
+
+	lattice.Numpy.buildNumpy(blocks)
+	Parameters
+	----------
+		blocks : list of type Block
+			The blocks used to build the numpy array. Blocks
+			should be put in order of origin to z-direction
+			max.
+	Returns
+	----------
+		Numpy : numpy array
+			A numpy array of shape (numAtoms, 3) and type
+			float is returned.
+	"""
+	Numpy = np.zeros( (0, 3), dtype=float)
+	def _outPos(lat_vector, basis, atom_mass, dim, bd_space, origin):
+		tmp = np.zeros( (dim[0] * dim[1] * dim[2] * len(basis), 3), dtype=float)
+		index = 0
+		for x_count in range(dim[0]):
+			for y_count in range(dim[1]):
+				for z_count in range(dim[2]):
+					for b in range(len(basis)):
+						# Print positions	
+						tmp[index, 0] = (origin[0] + (basis[b][0] * lat_vector[0] + x_count * lat_vector[0]))
+						tmp[index, 1] = (origin[1] + (basis[b][1] * lat_vector[1] + y_count * lat_vector[1]))
+						tmp[index, 2] = (origin[2] + (basis[b][2] * lat_vector[2] + z_count * lat_vector[2]))
+						index += 1
+
+		origin[2] = (lat_vector[2] * dim[2]) + (origin[2] + bd_space) #take max length and add bdspace
+			
+		return tmp, origin
+	#-- END outPos --#
+
+	## ## Preperation sequence
+	origin = [0, 0, 0] #inital origin
+	
+	for i in range(len(blocks)):
+		tmp, origin = _outPos(blocks[i].lat_vector, blocks[i].basis, blocks[i].atom_mass, blocks[i].dim, blocks[i].bd_space, origin) #returns new origin
+		Numpy = np.concatenate((Numpy, tmp))
+
+	return Numpy
+#-- END buildNumpy --#
 
 ## ## ## lammps class
 class Lammps:

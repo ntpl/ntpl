@@ -1,12 +1,14 @@
 ## ## ## This script will provide examples of how to implement
 ## ## ## the ntpy lattice module
 
-ntplPATH = 'home/kevin/projects/ntpl/Codes'
+ntplPATH = '/home/kevin/projects/ntpl/Codes'
 
 # First import the module
 import sys
 sys.path.append(ntplPATH) # Needed to link the ntplpy module
 import ntpy.lattice as lt
+# import numpy
+import numpy as np
 
 ## ## Create single lammps file with single lattice.
 ## ## This is the most basic case possible.
@@ -23,6 +25,9 @@ mylat = lt.Block([1.5632, 1.5632, 1.5632], 'fcc', [4, 4, 4], atom_mass = [1])
 mylamp.buildLammps([mylat])
 ## ## And you're done!!!
 
+## ## We can also return the positions as a numpy array
+npy_lattice = lt.buildNumpy([mylat])
+print npy_lattice
 
 ## ## "blocks" are very modular, they can be called multiple times
 ## ## This creates the same lattice above but from two "blocks".
