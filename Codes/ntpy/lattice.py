@@ -320,7 +320,33 @@ class Block:
 		assert success, "Only types \'sc\', \'fcc\', \'bcc\', \'diamond\' are supported"
 
 	#-- END __init__ --#
+
+	def numUcell(self):
+		return self.dim[0] * self.dim[1] * self.dim[2]
+	#-- END numUcell --#
+
+	def numAtomsUcell(self):
+		return len(self.basis)
+	#-- END numUcell --#
+
+	def numAtoms(self):
+		return self.numUcell() * self.numAtomsUcell()
+	#-- END numAtoms --#
+
+	def Lx(self):
+		return self.dim[0] * self.lat_vector[0]
+	#-- END Lx --#
+
+	def Ly(self):
+		return self.dim[1] * self.lat_vector[1]
+	#-- END Ly --#
+
+	def Lz(self):
+		return self.dim[2] * self.lat_vector[2]
+	#-- END Lz --#
+
 #-- END Block --#
+
 
 def printBasis(lat_type):
 	"""
