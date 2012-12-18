@@ -43,11 +43,12 @@ def sed(strings, orig, new):
 ##### END SED
 
 
-def grep(pattern, lines, orig, new):
+def grep(pattern, lines, orig, new, flag='-A'):
 	"""
-	Simplifies and executes the grep -A terminal command
+	Simplifies and executes the grep terminal command.
+	Supports -A and -v flags.
 
-	ntpy.strchg.sed(pattern, lines, orig, new)
+	ntpy.strchg.sed(pattern, lines, orig, new, flag='-A')
 	Parameters
 	----------
 		pattern : str
@@ -65,10 +66,16 @@ def grep(pattern, lines, orig, new):
 			A string containing the new file name. If the
 			file is not included in the pathway then it can
 			be the absolute or relative pathway to the file.
+		flag : str
+			A string containing the appropriate flag. If the
+			flag is -v then the lines argument is trivial.
 	"""	
-
-	os.system('grep -A ' + str(int(lines)) + ' \"' + str(pattern) + '\" ' + str(orig) + 
-						' > ' + str(new))
+	if flag is '-A':
+		os.system('grep -A ' + str(int(lines)) + ' \"' + str(pattern) + '\" ' + 
+					str(orig) +	' > ' + str(new))
+	elif flag is '-v':
+		os.system('grep -v ' + '\"' + str(pattern) + '\" ' + str(orig) +	
+				  ' > ' + str(new))
 
 
 
