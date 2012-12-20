@@ -29,11 +29,11 @@ def sed(strings, orig, new):
 			switch, which edits the original file without
 			creating a new one.
 	"""
-
 	## Create concatenated string of command expressions
 	commands = ''
 	for key in strings:
-		commands = commands +'-e \'s/' + str(key) + '/' + str(strings[key]) + '/g\' '
+		commands = commands +'-e \'s/' + str(key) + '/' + \
+				   str(strings[key]).replace(r'/', r'\/') + '/g\' '
 	
 	## Execute the sed command for new file or --in-place
 	if new == '':
@@ -70,10 +70,10 @@ def grep(pattern, lines, orig, new, flag='-A'):
 			A string containing the appropriate flag. If the
 			flag is -v then the lines argument is trivial.
 	"""	
-	if flag is '-A':
+	if flag == '-A':
 		os.system('grep -A ' + str(int(lines)) + ' \"' + str(pattern) + '\" ' + 
 					str(orig) +	' > ' + str(new))
-	elif flag is '-v':
+	elif flag == '-v':
 		os.system('grep -v ' + '\"' + str(pattern) + '\" ' + str(orig) +	
 				  ' > ' + str(new))
 
