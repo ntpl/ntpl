@@ -26,9 +26,23 @@ def value(string):
 					'tocenti' : 1e2,	# To centi-
 					'tomilli' : 1e3,	# To milli-
 					'tomicro' : 1e6,	# To micro-
-					'tonano' : 1e9,	# To nano-
+					'tonano' : 1e9,		# To nano-
+					'toang' : 1e10,		# To anstrom
 					'topico' : 1e12,	# To pico-
 					'tofemto' : 1e15,	# To femto-
+
+					'peta' : 1e15,	# peta-
+					'tera' : 1e12,	# tera-
+					'giga' : 1e9,	# giga-
+					'mega' : 1e6,	# mega-
+					'kilo' : 1e3,	# kilo-
+					'centi' : 1e-2,	# centi-
+					'milli' : 1e-3,	# milli-
+					'micro' : 1e-6,	# micro-
+					'nano' : 1e-9,	# nano-
+					'ang' : 1e-10,	# angstrom
+					'pico' : 1e-12,	# pico-
+					'femto' : 1e-15,	# femto-
 					})
 
 	try:

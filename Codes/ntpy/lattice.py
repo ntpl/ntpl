@@ -1,7 +1,7 @@
 ## ## ## lattice.py v.0.1
-## ## ## This program creates lattice data files
+## ## ## This program performs lattice and reciprical space manipulation
 ## ## ## Created: 06/21/2012 - KDP
-## ## ## Last Edited: 11/26/2012 - KDP
+## ## ## Last Edited: 1/18/2013 - KDP
 
 import numpy as np
 
@@ -386,4 +386,165 @@ def printBasis(lat_type):
 		print 'Atom '+ str(b + 1)+ '\t'+ str(basis[b])
 #-- END print_basis --#
 	
+
+def kpt(dim, conv=False):
+	"""
+	Creates an Lennard-Jones k-point list using either conventional or
+	primative lattice vectors.
+
+	ntpy.lattice.kpt(dim, conv = False)
+	Parameters
+	----------
+		dim : array of type int
+			An array that contains the number of unitcells in all three
+			directions.
+		conv : bool
+			A boolean that describes whether to use the primative or
+			conventional lattice vector. Defautls to conv = False, i.e. to use
+			the primative lattice vector.
+	Returns
+	----------
+		kpt : array of type float
+			The array of k points in the shape of (numKpts, 3). 
+	"""
+
+	# Total number of cells
+	numdim = 1
+	for i in range(len(dim)):
+		numdim = numdim * dim[i]
+
+	# Primative Lattice Vector
+	a1 = np.array( [0.5, 0.5, 0], dtype=float )
+	a2 = np.array( [0.5, 0, 0.5], dtype=float )
+	a3 = np.array( [0, 0.5, 0.5], dtype=float )
+
+	# Conventional Lattice Vector
+	if conv is True: # Rewrite vectors
+		a1 = np.array( [1.0, 0.0, 0.0], dtype=float )
+		a2 = np.array( [0.0, 1.0, 0.0], dtype=float )
+		a3 = np.array( [0.0, 0.0, 1.0], dtype=float )
+
+	# Find reciprical lattice vector
+	b1 = (np.cross(a2, a3)) / (np.dot(a1, np.cross(a2, a3)))
+	b2 = (np.cross(a1, a3)) / (np.dot(a2, np.cross(a1, a3)))
+	b3 = (np.cross(a1, a2)) / (np.dot(a3, np.cross(a1, a2)))
+
+	# The k-point matrix
+	kpt = np.zeros( (numdim, 3) )
+
+	## ## ## Create k-point list in integer format (i.e. missing 2pi/a)
+	index = 0
+	for ix in np.linspace(-(dim[0] / 2) + 1, dim[0] / 2, num = dim[0]):
+		for iy in np.linspace(-(dim[1] / 2) + 1, dim[1] / 2, num = dim[1]):
+			for iz in np.linspace(-(dim[2] / 2) + 1, dim[2] / 2, num = dim[2]):
+				kpt[index, :] = (ix / dim[0]) * b1[:] + \
+					(iy / dim[1]) * b2[:] + \
+					(iz / dim[2]) * b3[:]
+				index += 1	
 	
+	if conv is True: # No need to check against rec lat if conv
+		return kpt
+
+	# Build reciprical lattice points for comparison
+	numdimrec = (dim[0]*2 + 1) * (dim[1]*2 + 1) * (dim[2]*2 + 1) 
+	reclat = np.zeros( (numdimrec - 1, 3) )
+
+
+	index = 0
+	for ix in np.linspace(-dim[0], dim[0], num = dim[0]*2 + 1):
+		for iy in np.linspace(-dim[1], dim[1], num = dim[1]*2 + 1):
+			for iz in np.linspace(-dim[2], dim[2], num = dim[2]*2 + 1):
+				reclat[index, :] = ix * b1[:] + iy * b2[:] + iz * b3[:]
+				if all(reclat[index, :] != [0, 0, 0]): #make sure not first bz point
+					index += 1
+
+	# Now compare kpt to lattice points to map into first Brillouin Zone
+	for ikpt in range(kpt[:, 0].size):
+		while True:
+			first = True # Bool to describe if kpt passed all reciprical latvecs
+
+			for ireclat in range(reclat[:, 0].size):
+				r_reclat2 = 0
+				r_origin2 = 0
+
+				for axis in range(3):
+					r_origin = 0 - kpt[ikpt, axis]
+					r_origin2 = r_origin2 + r_origin * r_origin
+					r_reclat = reclat[ireclat, axis] - kpt[ikpt, axis]
+					r_reclat2 = r_reclat2 + r_reclat * r_reclat
+
+				if r_reclat2 < r_origin2:
+					kpt[ikpt, :] = kpt[ikpt, :] - reclat[ireclat, :]
+					first = False
+
+			if first:
+				break
+	
+	return kpt
+#-- END kpt --#
+
+
+def cubicKptSym(kpt):
+	"""
+	Creates an Lennard-Jones k-point list using either conventional or
+	primative lattice vectors.
+
+	ntpy.lattice.cubicKptSym(dim, conv = False)
+	Parameters
+	----------
+		dim : array of type int
+			An array that contains the number of unitcells in all three
+			directions.
+		conv : bool
+			A boolean that describes whether to use the primative or
+			conventional lattice vector. Defautls to conv = False, i.e. to use
+			the primative lattice vector.
+	Return
+	----------
+		irrKpt : numpy array of type float
+			An array that contains the irreducible k-points
+		degen : numpy array of type int
+			An array the length of numKpts that relates the index of the
+			original k-points to their equivalent index in irrKpt. E.g.
+			degen[6] = 2 yeilds kpt[6,:] is symmetric to irrKpt[2,:].
+	"""
+	def _issym(kpt1, kpt2):
+		temp = np.zeros( (3), dtype=float )
+		sym = False
+		for i1 in range (-1, 2, 2):
+			for i2 in range (-1, 2, 2):
+				for i3 in range (-1, 2, 2):
+					temp[:] = [i1, i2, i3] * kpt2[:]
+					
+					if kpt1[0] == temp[0] and kpt1[1] == temp[1] and kpt1[2] == temp[2]:
+						sym = True
+					elif kpt1[0] == temp[2] and kpt1[1] == temp[0] and kpt1[2] == temp[1]:
+						sym = True
+					elif kpt1[0] == temp[1] and kpt1[1] == temp[2] and kpt1[2] == temp[0]:
+						sym = True
+					elif kpt1[0] == temp[0] and kpt1[1] == temp[2] and kpt1[2] == temp[1]:
+						sym = True
+					elif kpt1[0] == temp[2] and kpt1[1] == temp[1] and kpt1[2] == temp[0]:
+						sym = True
+					elif kpt1[0] == temp[1] and kpt1[1] == temp[0] and kpt1[2] == temp[2]:
+						sym = True
+		return sym
+	#-- END _issym --#
+	degen = np.zeros( (kpt[:,0].size), dtype=int )
+	irrKpt = np.zeros( (1, 3) )
+	irrKpt[0,:] = kpt[0,:]
+	for ikpt in range(1, kpt[:,0].size):
+		found = False
+		for iirr in range(irrKpt[:,0].size):
+			if _issym(kpt[ikpt,:], irrKpt[iirr,:]):
+				found = True
+				idKpt = iirr
+		if not found:
+			irrKpt = np.append(irrKpt, [kpt[ikpt,:]], axis = 0)
+			degen[ikpt] = irrKpt[:,0].size - 1
+		else:
+			degen[ikpt] = iirr
+	
+	return irrKpt, degen
+#-- END cubicKptSym --#
+				
