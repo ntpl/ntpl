@@ -530,21 +530,37 @@ def cubicKptSym(kpt):
 						sym = True
 		return sym
 	#-- END _issym --#
-	degen = np.zeros( (kpt[:,0].size), dtype=int )
+	# if _issym(np.array([-0.25, -0.25, -0.25]), np.array([-0.25, -0.25, 0.25])):
+		# print 'Is sym'
+
+
+	# The irreducible k-points
 	irrKpt = np.zeros( (1, 3) )
 	irrKpt[0,:] = kpt[0,:]
+
+	# The irreducible k-points counts (num of kpts reduced)
+	irrKptCnt = np.zeros( (1), dtype=int )
+	irrKptCnt[0] = 1
+
+	# The list of where the degenerate k-points map to irrKpt
+	degen = np.zeros( (kpt[:,0].size), dtype=int )
+
 	for ikpt in range(1, kpt[:,0].size):
 		found = False
 		for iirr in range(irrKpt[:,0].size):
 			if _issym(kpt[ikpt,:], irrKpt[iirr,:]):
+				print str(kpt[ikpt,:]) + '\t' + str(irrKpt[iirr,:])
+				print str(ikpt) + '\t' + str(iirr)
 				found = True
 				idKpt = iirr
 		if not found:
 			irrKpt = np.append(irrKpt, [kpt[ikpt,:]], axis = 0)
+			irrKptCnt = np.append(irrKptCnt, [1], axis = 0)
 			degen[ikpt] = irrKpt[:,0].size - 1
 		else:
-			degen[ikpt] = iirr
+			irrKptCnt[idKpt] = irrKptCnt[idKpt] + 1
+			degen[ikpt] = idKpt
 	
-	return irrKpt, degen
+	return irrKpt, irrKptCnt, degen
 #-- END cubicKptSym --#
 				
