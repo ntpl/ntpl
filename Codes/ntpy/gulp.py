@@ -72,6 +72,7 @@ def eig(strchg, numAtomsUC, gulpName, tempName, kpt):
 			file is not included in the pathway then it can
 			be the absolute or relative pathway to the file.
 	"""
+	numModes = 3 * numAtomsUC
 	# String change the template file
 	st.sed(strchg, gulpName, tempName)
 	# Execute the new gulp file
@@ -91,13 +92,16 @@ def eig(strchg, numAtomsUC, gulpName, tempName, kpt):
 	if kpt[0] == 0.0 and kpt[1] == 0.0 and kpt[2] == 0.0: 
 		# If Gamma Point gulp only prints the real values
 		dummy = np.loadtxt('eigvec4.dat', usecols=(1,2,3,4,5,6), comments='--')
-		dummy = np.reshape(dummy, (3 * numAtomsUC, -1))
-		eig = np.zeros( (3 * numAtomsUC, 3 * numAtomsUC), dtype=complex)
-		for i in range(3 * numAtomsUC):
-			eig[i,:] = dummy[i,:]
+		eig = np.zeros( (numModes, numModes), dtype=complex)
+		for iSlice in range(0,numModes,3*2):
+			eig[:,iSlice:iSlice+(3*2)] = dummy[iSlice*numAtomsUC/2:iSlice*numAtomsUC/2 \
+									+(numModes),:]
 	else:
-		eig = np.loadtxt('eigvec4.dat', usecols=(1,2,3,4,5,6), comments='--').view(complex)
-		eig = np.reshape(eig, (3 * numAtomsUC, -1))
+		dummy = np.loadtxt('eigvec4.dat', usecols=(1,2,3,4,5,6), comments='--').view(complex)
+		eig = np.zeros( (numModes, numModes), dtype=complex)
+		for iSlice in range(0,numModes,3):
+			eig[:,iSlice:iSlice+3] = dummy[iSlice*numAtomsUC:iSlice*numAtomsUC \
+									+numModes,:]
 	
 	system('rm eigvec4.dat')
 	return eig

@@ -530,9 +530,6 @@ def cubicKptSym(kpt):
 						sym = True
 		return sym
 	#-- END _issym --#
-	# if _issym(np.array([-0.25, -0.25, -0.25]), np.array([-0.25, -0.25, 0.25])):
-		# print 'Is sym'
-
 
 	# The irreducible k-points
 	irrKpt = np.zeros( (1, 3) )
@@ -549,8 +546,6 @@ def cubicKptSym(kpt):
 		found = False
 		for iirr in range(irrKpt[:,0].size):
 			if _issym(kpt[ikpt,:], irrKpt[iirr,:]):
-				print str(kpt[ikpt,:]) + '\t' + str(irrKpt[iirr,:])
-				print str(ikpt) + '\t' + str(iirr)
 				found = True
 				idKpt = iirr
 		if not found:
