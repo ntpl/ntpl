@@ -8,7 +8,7 @@ import strchg as st
 import param.const as ct
 import param.lj as lj
 
-def freq(strchg, numAtomsUC, gulpName, tempName):
+def freq(strchg, numAtomsUC, gulpName, tempName, gulpExe='gulp'):
 	"""
 	Executes a gulp program with the string changes neccesary
 	and returns the frequencies.
@@ -31,11 +31,19 @@ def freq(strchg, numAtomsUC, gulpName, tempName):
 			A string containing the new file name. If the
 			file is not included in the pathway then it can
 			be the absolute or relative pathway to the file.
+		gulpExe : str, optional
+			A string of the gulp executable. Defaults to 
+			"gulp".
+	Returns
+	----------
+		freq : numpy array of type float
+			A array returning the frequencies of the k-point.
+			The array is of shape (3 * numAtomsUC)
 	"""
 	# String change the template file
 	st.sed(strchg, gulpName, tempName)
 	# Execute the new gulp file
-	system('gulp <'+ tempName+ ' > output.gulp')
+	system(gulpExe+ ' <'+ tempName+ ' > output.gulp')
 	# system('gulp '+ tempName+ ' output.gulp')
 	# Extract the frequencies
 	freq = np.zeros( (3 * numAtomsUC), dtype=float)
@@ -45,7 +53,7 @@ def freq(strchg, numAtomsUC, gulpName, tempName):
 
 	return freq
 
-def eig(strchg, numAtomsUC, gulpName, tempName, kpt):
+def eig(strchg, numAtomsUC, gulpName, tempName, kpt, gulpExe='gulp'):
 	"""
 	Executes a gulp program with the string changes neccesary
 	and returns the eigenvectors.
@@ -64,19 +72,30 @@ def eig(strchg, numAtomsUC, gulpName, tempName, kpt):
 			the file is not included in the pathway then it
 			can be the absolute or relative pathway to the
 			file.
-		kpt : array of type float
-			A numpy array of size 3 that has the three
-			dimension k-point to be used.
 		tempName : str
 			A string containing the new file name. If the
 			file is not included in the pathway then it can
 			be the absolute or relative pathway to the file.
+		kpt : array of type float
+			A numpy array of size 3 that has the three
+			dimension k-point to be used.
+		gulpExe : str, optional
+			A string of the gulp executable. Defaults to 
+			"gulp".
+	Returns
+	----------
+		eig : numpy array of type complex
+			A eigenvector array where columns correspond to
+			modes and rows correspond to atoms in the unit
+			cell, where each unit cell atom is split into 
+			x, y, z. Shape of array is (3 * numAtomsUC,
+			3 * numAtomsUC)
 	"""
 	numModes = 3 * numAtomsUC
 	# String change the template file
 	st.sed(strchg, gulpName, tempName)
 	# Execute the new gulp file
-	system('gulp <'+ tempName+ ' > output.gulp')
+	system(gulpExe+ ' <'+ tempName+ ' > output.gulp')
 	# Grep out eigenvectors
 	st.grep(' 1 x', 3 * numAtomsUC, 'output.gulp', 'eigvec_grep.dat')
 	xyzDict = dict({ 'x' : ''})
@@ -106,7 +125,7 @@ def eig(strchg, numAtomsUC, gulpName, tempName, kpt):
 	system('rm eigvec4.dat')
 	return eig
 
-def vel(strchg, numAtomsUC, gulpName, tempName, kpt, freqConv=1.0, deltaKpt=10e-5):
+def vel(strchg, numAtomsUC, gulpName, tempName, kpt, freqConv=1.0, deltaKpt=10e-5, gulpExe='gulp'):
 	"""
 	Executes a gulp program with the string changes neccesary
 	and returns the velocities.
@@ -132,12 +151,20 @@ def vel(strchg, numAtomsUC, gulpName, tempName, kpt, freqConv=1.0, deltaKpt=10e-
 		kpt : array of type float
 			A numpy array of size 3 that has the three
 			dimension k-point to be used.
-		freqConv : float
+		freqConv : float, optional
 			A float that can be used to convert the units of
 			the freqency used. Defaults to 1.0 (no conversion).
-		deltaKpt : float
+		deltaKpt : float, optional
 			A float that determines what difference to use
 			for the difference theorem. Defaults to 10e-5.
+		gulpExe : str, optional
+			A string of the gulp executable. Defaults to 
+			"gulp".
+	Returns
+	----------
+		vel : numpy array of type float
+			Returns the velocity for the kpt in a array of
+			shape (3 * numAtomsUC, 3)
 	"""
 	def _kptstrchg(strchg, kpt):
 		strchg['KPT'] = '{:10f} {:10f} {:10f}'.format(kpt[0], kpt[1], kpt[2])
@@ -148,44 +175,44 @@ def vel(strchg, numAtomsUC, gulpName, tempName, kpt, freqConv=1.0, deltaKpt=10e-
 	# For all three directions
 	for idim in range(3):
 		if kpt[idim] == 0.5: # kpt at right boundary
-			freqVal = freq(strchg, numAtomsUC, gulpName, tempName) * freqConv
+			freqVal = freq(strchg, numAtomsUC, gulpName, tempName, gulpExe=gulpExe) * freqConv
 			# Change kpt
 			kpt[idim] = kpt[idim] - deltaKpt
 			strchg = _kptstrchg(strchg, kpt)
-			freqValMdk = freq(strchg, numAtomsUC, gulpName, tempName) * freqConv
+			freqValMdk = freq(strchg, numAtomsUC, gulpName, tempName, gulpExe=gulpExe) * freqConv
 			vel[:, idim] = ((freqVal - freqValMdk) / deltaKpt) * 1e-10
 			# Reset kpt
 			kpt[idim] = kpt[idim] + deltaKpt
 			strchg = _kptstrchg(strchg, kpt)
 		elif kpt[idim] == -0.5: # kpt at left boundary
-			freqVal = freq(strchg, numAtomsUC, gulpName, tempName) * freqConv
+			freqVal = freq(strchg, numAtomsUC, gulpName, tempName, gulpExe=gulpExe) * freqConv
 			# Change kpt
 			kpt[idim] = kpt[idim] + deltaKpt
 			strchg = _kptstrchg(strchg, kpt)
-			freqValPdk = freq(strchg, numAtomsUC, gulpName, tempName) * freqConv
+			freqValPdk = freq(strchg, numAtomsUC, gulpName, tempName, gulpExe=gulpExe) * freqConv
 			vel[:, idim] = ((freqValPdk - freqVal) / deltaKpt) * 1e-10
 			# Reset kpt
 			kpt[idim] = kpt[idim] - deltaKpt
 			strchg = _kptstrchg(strchg, kpt)
 		elif kpt[idim] == 0.0: # kpt at gamma point
-			freqVal = freq(strchg, numAtomsUC, gulpName, tempName) * freqConv
+			freqVal = freq(strchg, numAtomsUC, gulpName, tempName, gulpExe=gulpExe) * freqConv
 			# Change kpt
 			kpt[idim] = kpt[idim] + deltaKpt
 			strchg = _kptstrchg(strchg, kpt)
-			freqValPdk = freq(strchg, numAtomsUC, gulpName, tempName) * freqConv
+			freqValPdk = freq(strchg, numAtomsUC, gulpName, tempName, gulpExe=gulpExe) * freqConv
 			vel[:, idim] = ((freqValPdk - freqVal) / deltaKpt) * 1e-10
 			# Reset kpt
 			kpt[idim] = kpt[idim] - deltaKpt
 			strchg = _kptstrchg(strchg, kpt)
 		else: # kpt at gamma point
-			freqVal = freq(strchg, numAtomsUC, gulpName, tempName) * freqConv
+			freqVal = freq(strchg, numAtomsUC, gulpName, tempName, gulpExe=gulpExe) * freqConv
 			# Change kpt
 			kpt[idim] = kpt[idim] + deltaKpt
 			strchg = _kptstrchg(strchg, kpt)
-			freqValPdk = freq(strchg, numAtomsUC, gulpName, tempName) * freqConv
+			freqValPdk = freq(strchg, numAtomsUC, gulpName, tempName, gulpExe=gulpExe) * freqConv
 			kpt[idim] = kpt[idim] - (2.0 * deltaKpt)
 			strchg = _kptstrchg(strchg, kpt)
-			freqValMdk = freq(strchg, numAtomsUC, gulpName, tempName) * freqConv
+			freqValMdk = freq(strchg, numAtomsUC, gulpName, tempName, gulpExe=gulpExe) * freqConv
 			vel[:, idim] = ((freqValPdk - freqValMdk) / deltaKpt) * 1e-10
 			# Reset kpt
 			kpt[idim] = kpt[idim] - deltaKpt
