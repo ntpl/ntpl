@@ -4,10 +4,11 @@
 ## ## ## Created: 07/29/2012 - KDP
 ## ## ## Last Edited: 07/31/2012 - KDP
 import os
+import numpy as np
 
 def sed(strings, orig, new):
 	"""
-	Simplifies and executes the sed terminal command
+	Simplifies and executes the sed terminal command.
 
 	ntpy.strchg.sed(strings, orig, new)
 	Parameters
@@ -40,7 +41,7 @@ def sed(strings, orig, new):
 		os.system('sed -i ' + commands + str(orig))
 	else:
 		os.system('sed ' + commands + str(orig) + ' > ' + str(new))
-##### END SED
+#-- END Sed --#
 
 
 def grep(pattern, lines, orig, new, flag='-A'):
@@ -66,9 +67,11 @@ def grep(pattern, lines, orig, new, flag='-A'):
 			A string containing the new file name. If the
 			file is not included in the pathway then it can
 			be the absolute or relative pathway to the file.
-		flag : str
-			A string containing the appropriate flag. If the
-			flag is -v then the lines argument is trivial.
+		flag : {'-A','-v'}, optional
+			Specify grep flag. If flag is '-A' (default), then
+			grep will extract lines after pattern. If flag is
+			'-v', then grep will reverse match all instances 
+			of pattern, and the lines parameter is arbitrary.
 	"""	
 	if flag == '-A':
 		os.system('grep -A ' + str(int(lines)) + ' \"' + str(pattern) + '\" ' + 
@@ -76,6 +79,5 @@ def grep(pattern, lines, orig, new, flag='-A'):
 	elif flag == '-v':
 		os.system('grep -v ' + '\"' + str(pattern) + '\" ' + str(orig) +	
 				  ' > ' + str(new))
-
-
+#-- END Grep --#
 

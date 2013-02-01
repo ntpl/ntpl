@@ -66,7 +66,7 @@ class Lammps:
 		self.file_name = file_name
 	#-- END __init__ --#
 
-	def buildLammps(self, blocks):
+	def buildLammps(self, blocks, noisy=False):
 		"""
 		This creates and writes the lammps file based on the blocks provided
 
@@ -77,6 +77,9 @@ class Lammps:
 				The blocks used to build the lammps file. Blocks
 				should be put in order of origin to z-direction
 				max.
+			noisy : bool, optional
+				If true, then function will print out lammps details, otherwise
+				the function will be quiet (default).
 		"""
 		print_file = open(self.file_name, 'w')
 
@@ -163,7 +166,8 @@ class Lammps:
 		for i in range(len(blocks)):
 			origin, atom_num = _outPos(blocks[i].lat_vector, blocks[i].basis, blocks[i].atom_mass, blocks[i].dim, blocks[i].bd_space, origin, masses, atom_num) #returns new origin
 
-		print('Lammps file complete: Atoms '+ str(total_atom_num)+ '; Box size ['+ str(x_max)+ ', '+ str(y_max)+ ', '+ str(z_max)+ ']\n')
+		if noisy:
+			print('Lammps file complete: Atoms '+ str(total_atom_num)+ '; Box size ['+ str(x_max)+ ', '+ str(y_max)+ ', '+ str(z_max)+ ']\n')
 	#-- END buildLammps --#
 #-- END Lammps --#
 
@@ -182,7 +186,7 @@ class Xyz:
 		self.file_name = file_name
 	#-- END __init__ --#
 
-	def buildXyz(self, blocks):
+	def buildXyz(self, blocks, noisy=False):
 		"""
 		This creates and writes the xyz file based on the blocks provided
 
@@ -193,6 +197,9 @@ class Xyz:
 				The blocks used to build the lammps file. Blocks
 				should be put in order of origin to z-direction
 				max.
+			noisy : bool, optional
+				If true, then function will print out Xyz details, otherwise
+				the function will be quiet (default).
 		"""
 		print_file = open(self.file_name, 'w')
 
@@ -246,8 +253,9 @@ class Xyz:
 
 		for i in range(len(blocks)):
 			origin = _outPos(blocks[i].lat_vector, blocks[i].basis, blocks[i].dim, blocks[i].atom_type, blocks[i].bd_space, origin) #returns new origin
-
-		print('XYZ file complete: Atoms '+ str(total_atom_num)+ '\n')
+		
+		if noisy:
+			print('XYZ file complete: Atoms '+ str(total_atom_num)+ '\n')
 	#-- END buildXyz --#
 #-- END Xyz --#
 
@@ -495,11 +503,10 @@ def cubicKptSym(kpt):
 		dim : array of type int
 			An array that contains the number of unitcells in all three
 			directions.
-		conv : bool
-			A boolean that describes whether to use the primative or
-			conventional lattice vector. Defautls to conv = False, i.e. to use
-			the primative lattice vector.
-	Return
+		conv : bool, optional
+			If True, then conventional lattice vector will be used, otherwise
+			conventional lattice vector will be used (default).
+	Returns
 	----------
 		irrKpt : numpy array of type float
 			An array that contains the irreducible k-points
