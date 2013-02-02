@@ -46,9 +46,10 @@ Table of Contents:
 				creating a new one.
 
 	[2.2] - def grep 
-		Simplifies and executes the grep -A terminal command
+		Simplifies and executes the grep terminal command.
+		Supports -A and -v flags.
 
-		ntpy.strchg.sed(pattern, lines, orig, new)
+		ntpy.strchg.sed(pattern, lines, orig, new, flag='-A')
 		Parameters
 		----------
 			pattern : str
@@ -66,3 +67,9 @@ Table of Contents:
 				A string containing the new file name. If the
 				file is not included in the pathway then it can
 				be the absolute or relative pathway to the file.
+			flag : {'-A','-v'}, optional
+				Specify grep flag. If flag is '-A' (default), then
+				grep will extract lines after pattern. If flag is
+				'-v', then grep will reverse match all instances 
+				of pattern, and the lines parameter is arbitrary.
+

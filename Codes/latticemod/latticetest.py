@@ -10,8 +10,9 @@ import ntpy.lattice as lt
 # import numpy
 import numpy as np
 
-## ## Create single lammps file with single lattice.
-## ## This is the most basic case possible.
+
+## ## Create single lammps file with single lattice.				## ##
+## ## This is the most basic case possible.							## ##
 
 #	First, create a lammps object that represents one file.
 mylamp = lt.Lammps('test_1.txt') 
@@ -29,8 +30,9 @@ mylamp.buildLammps([mylat])
 npy_lattice = lt.buildNumpy([mylat])
 print npy_lattice
 
-## ## "blocks" are very modular, they can be called multiple times
-## ## This creates the same lattice above but from two "blocks".
+
+## ## "blocks" are very modular, they can be called multiple times	## ##
+## ## This creates the same lattice above but from two "blocks".	## ##
 
 mylamp = lt.Lammps('test_2.txt')
 # Notice this block is half the size in the z-direction
@@ -42,8 +44,8 @@ mylamp.buildLammps([mylat, mylat])
 ## ## End
 
 
-## ## We can also build an xyz file for visualization
-## ## by adding the atom_type parameter needed for xyz
+## ## We can also build an xyz file for visualization				## ##
+## ## by adding the atom_type parameter needed for xyz				## ##
 
 myxyz = lt.Xyz('test_3.xyz')
 # NB: atom_mass is not required for xyz files, therefore it is not included here
@@ -52,7 +54,8 @@ myxyz.buildXyz([mylat])
 ## ## End
 
 
-## ## Another cool ability of the lattice module is multi-species lattices
+## ## Another cool ability of the lattice module is					## ##
+## ## multi-species lattices										## ##
 
 mylamp = lt.Lammps('test_4.txt')
 # Here we simply add the extra masses to out 'atom_mass' parameter to match the atoms
@@ -65,10 +68,11 @@ mylamp.buildLammps([mylat])
 lt.printBasis('fcc')
 ## ## End
 
-## ## Let's do something more complicated
-## ## Here we create 4 files that alternate heave and light argon in increasing
-## ## number. We also create xyz files to visualize our results from the same
-## ## blocks.
+
+## ## Let's do something more complicated.							## ##
+## ## Here we create 4 files that alternate heave and light argon	## ##
+## ## in increasing number. We also create xyz files to visualize	## ##
+## ## our results from the same blocks.								## ##
 
 hot_reservoir = lt.Block([1.5632, 1.5632, 1.5632], 'fcc', [8, 8, 2], atom_mass=[1], atom_type=['Ar'], bd_space=1.5632)
 cold_reservoir = lt.Block([1.5632, 1.5632, 1.5632], 'fcc', [8, 8, 2], atom_mass=[1], atom_type=['Ar'])

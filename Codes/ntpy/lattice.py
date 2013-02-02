@@ -330,26 +330,44 @@ class Block:
 	#-- END __init__ --#
 
 	def numUcell(self):
+		"""
+		Int of the number of unit cells of the Block.			
+		"""
 		return self.dim[0] * self.dim[1] * self.dim[2]
 	#-- END numUcell --#
 
 	def numAtomsUcell(self):
+		"""
+		Int of the number of the number of atoms in the unit cell.			
+		"""
 		return len(self.basis)
 	#-- END numUcell --#
 
 	def numAtoms(self):
+		"""
+		Int of the number of atoms in the Block.			
+		"""
 		return self.numUcell() * self.numAtomsUcell()
 	#-- END numAtoms --#
 
 	def Lx(self):
+		"""
+		Float of the length of the Block in the x-direction.			
+		"""
 		return self.dim[0] * self.lat_vector[0]
 	#-- END Lx --#
 
 	def Ly(self):
+		"""
+		Float of the length of the Block in the y-direction.			
+		"""
 		return self.dim[1] * self.lat_vector[1]
 	#-- END Ly --#
 
 	def Lz(self):
+		"""
+		Float of the length of the Block in the z-direction.			
+		"""
 		return self.dim[2] * self.lat_vector[2]
 	#-- END Lz --#
 
@@ -400,16 +418,16 @@ def kpt(dim, conv=False):
 	Creates an Lennard-Jones k-point list using either conventional or
 	primative lattice vectors.
 
-	ntpy.lattice.kpt(dim, conv = False)
+	ntpy.lattice.kpt(dim, conv=False)
 	Parameters
 	----------
 		dim : array of type int
 			An array that contains the number of unitcells in all three
 			directions.
-		conv : bool
-			A boolean that describes whether to use the primative or
-			conventional lattice vector. Defautls to conv = False, i.e. to use
-			the primative lattice vector.
+		conv : bool, optional
+			If true, then k-points will be created using conventional 
+			lattice vector, otherwise the k-points will be created using
+			primative lattice vector (default).
 	Returns
 	----------
 		kpt : array of type float
@@ -494,22 +512,21 @@ def kpt(dim, conv=False):
 
 def cubicKptSym(kpt):
 	"""
-	Creates an Lennard-Jones k-point list using either conventional or
-	primative lattice vectors.
+	Reduces the k-point list based on cubic symmetries.
 
-	ntpy.lattice.cubicKptSym(dim, conv = False)
+	ntpy.lattice.cubicKptSym(kpt)
 	Parameters
 	----------
-		dim : array of type int
-			An array that contains the number of unitcells in all three
-			directions.
-		conv : bool, optional
-			If True, then conventional lattice vector will be used, otherwise
-			conventional lattice vector will be used (default).
+		kpt : numpy array of type float
+			An array that contains the k-point list in any order. Array should
+			be of shape (numKpts, 3).
 	Returns
 	----------
 		irrKpt : numpy array of type float
 			An array that contains the irreducible k-points
+		irrKptCnt : numpy array of type int
+			An array that contains the number of k-points reduced into one
+			irreducible k-point
 		degen : numpy array of type int
 			An array the length of numKpts that relates the index of the
 			original k-points to their equivalent index in irrKpt. E.g.
@@ -518,9 +535,9 @@ def cubicKptSym(kpt):
 	def _issym(kpt1, kpt2):
 		temp = np.zeros( (3), dtype=float )
 		sym = False
-		for i1 in range (-1, 2, 2):
-			for i2 in range (-1, 2, 2):
-				for i3 in range (-1, 2, 2):
+		for i1 in range(-1, 2, 2):
+			for i2 in range(-1, 2, 2):
+				for i3 in range(-1, 2, 2):
 					temp[:] = [i1, i2, i3] * kpt2[:]
 					
 					if kpt1[0] == temp[0] and kpt1[1] == temp[1] and kpt1[2] == temp[2]:

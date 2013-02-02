@@ -2,7 +2,7 @@
 ## ## ## This program simplifies and executes
 ## ## ## common text manipulation operations.
 ## ## ## Created: 07/29/2012 - KDP
-## ## ## Last Edited: 07/31/2012 - KDP
+## ## ## Last Edited: 02/01/2013 - KDP
 import os
 import numpy as np
 
