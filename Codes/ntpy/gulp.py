@@ -124,12 +124,12 @@ def eig(strchg, numAtomsUC, gulpName, tempName, kpt, gulpExe='gulp'):
 	system('rm eigvec4.dat')
 	return eig
 
-def vel(strchg, numAtomsUC, gulpName, tempName, kpt, latConst, deltaKpt=1e-5, gulpExe='gulp'):
+def vel(strchg, numAtomsUC, gulpName, tempName, kpt, latConst, deltaKpt=1e-3, gulpExe='gulp'):
 	"""
 	Executes a gulp program with the string changes neccesary
 	and returns the velocities.
 
-	ntpy.gulp.vel(strchg, numAtomsUC, gulpName, tempName, deltaKpt=1e-7, gulpExe='gulp')
+	ntpy.gulp.vel(strchg, numAtomsUC, gulpName, tempName, deltaKpt=1e-3, gulpExe='gulp')
 	Parameters
 	----------
 		strchg : dict of type str
@@ -198,19 +198,13 @@ def vel(strchg, numAtomsUC, gulpName, tempName, kpt, latConst, deltaKpt=1e-5, gu
 		elif kpt[idim] == 0.0: # kpt at gamma point
 			freqVal = freq(strchg, numAtomsUC, gulpName, tempName, gulpExe=gulpExe)
 			# Change kpt
-			print kpt
-			print strchg['KPT']
 			kpt[idim] = kpt[idim] + deltaKpt
 			strchg = _kptstrchg(strchg, kpt)
-			print kpt
-			print strchg['KPT']
 			freqValPdk = freq(strchg, numAtomsUC, gulpName, tempName, gulpExe=gulpExe) 
 			vel[:, idim] = ((freqValPdk - freqVal) / deltaKpt) * velConv
 			# Reset kpt
 			kpt[idim] = kpt[idim] - deltaKpt
 			strchg = _kptstrchg(strchg, kpt)
-			print kpt
-			print strchg['KPT']
 		else:
 			freqVal = freq(strchg, numAtomsUC, gulpName, tempName, gulpExe=gulpExe) 
 			# Change kpt
@@ -222,7 +216,7 @@ def vel(strchg, numAtomsUC, gulpName, tempName, kpt, latConst, deltaKpt=1e-5, gu
 			freqValMdk = freq(strchg, numAtomsUC, gulpName, tempName, gulpExe=gulpExe) 
 			vel[:, idim] = ((freqValPdk - freqValMdk) / (2.0 * deltaKpt)) * velConv
 			# Reset kpt
-			kpt[idim] = kpt[idim] - deltaKpt
+			kpt[idim] = kpt[idim] + deltaKpt
 			strchg = _kptstrchg(strchg, kpt)
 
 	return vel
