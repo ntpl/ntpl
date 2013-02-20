@@ -1,0 +1,6 @@
+in.*
+out.*
+tmp.*
+*.pyc
+*.sqp
+KDP.*
